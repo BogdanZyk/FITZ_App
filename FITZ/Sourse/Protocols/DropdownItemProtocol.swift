@@ -8,7 +8,7 @@
 import Foundation
 
 protocol DropdownItemProtocol{
-    var ortions: [DropdownOption] { get }
+    var options: [DropdownOption] { get }
     var headerTitle: String { get }
     var dropdownTitle: String { get }
     var isSelected: Bool { get set }

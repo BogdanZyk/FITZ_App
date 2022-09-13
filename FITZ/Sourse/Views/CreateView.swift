@@ -23,6 +23,9 @@ struct CreateView: View {
             .navigationTitle("Create")
         .navigationBarBackButtonHidden(true)
         }
+        .confirmationDialog("Select", isPresented: Binding<Bool>(get: {viewModel.hasSelectedDropdown}, set: { _ in })) {
+            confirmContent
+        }
     }
 }
 
@@ -47,6 +50,18 @@ extension CreateView{
         } label: {
             Text("Next")
                 .font(.system(size: 24, weight: .medium))
+        }
+    }
+    
+    private var confirmContent: some View{
+        Group {
+            ForEach(viewModel.displayedOption.indices, id: \.self){ index in
+                Button(viewModel.displayedOption[index].formatted, action: {
+                    viewModel.send(.selectOption(index: index))
+                    
+                })
+            }
+            Button("Cancel", role: .cancel, action: viewModel.clearIsSelectedAllDropdowns)
         }
     }
 }
