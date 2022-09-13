@@ -8,27 +8,34 @@
 import SwiftUI
 
 struct LandingView: View {
+    @State private var isActive: Bool = false
     var body: some View {
-        GeometryReader { proxy in
-            VStack{
-                Spacer().frame(height: proxy.size.height * 0.3)
-                Text("Welcome to FitzApp")
-                    .font(.system(size: 35, weight: .medium))
-                    .foregroundColor(.white)
-                Spacer()
-               
-                actionButton
-            }
-            .allFrame()
-            .background{
-                Image("landing2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .overlay(Color.black.opacity(0.4))
-                    .frame(width: proxy.size.width)
-                    .edgesIgnoringSafeArea(.all)
+        NavigationView {
+            GeometryReader { proxy in
+                VStack{
+                    Spacer().frame(height: proxy.size.height * 0.3)
+                    Text("Welcome to FitzApp")
+                        .font(.system(size: 35, weight: .medium))
+                        .foregroundColor(.white)
+                    Spacer()
+                    NavigationLink(isActive: $isActive) {
+                        CreateView()
+                    } label: {
+                        actionButton
+                    }
+                }
+                .allFrame()
+                .background{
+                    Image("landing2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .overlay(Color.black.opacity(0.4))
+                        .frame(width: proxy.size.width)
+                        .edgesIgnoringSafeArea(.all)
+                }
             }
         }
+        .accentColor(.primary)
     }
 }
 
@@ -42,7 +49,7 @@ struct LandingView_Previews: PreviewProvider {
 extension LandingView{
     private var actionButton: some View{
         Button {
-            
+            isActive.toggle()
         } label: {
             HStack{
                 Image(systemName: "plus.circle")
