@@ -9,14 +9,18 @@ import Foundation
 
 
 struct CallengePartModel: DropdownItemProtocol{
+    
+    var isSelected: Bool = false
+    
+    var selectedOption: DropdownOption
+    
     var options: [DropdownOption]
     var headerTitle: String {
         type.rawValue
     }
     var dropdownTitle: String {
-        options.first(where: {$0.isSelected})?.formatted ?? ""
+        selectedOption.formatted
     }
-    var isSelected: Bool = false
     
     private let type: ChallengePartType
     
@@ -35,6 +39,7 @@ struct CallengePartModel: DropdownItemProtocol{
         }
         
         self.type = type
+        self.selectedOption = options.first!
     }
     
     enum ChallengePartType: String, CaseIterable{
@@ -49,7 +54,7 @@ struct CallengePartModel: DropdownItemProtocol{
         case situps
         
         var toDropdownOption: DropdownOption {
-            .init(type: .text(rawValue), formatted: rawValue.capitalized, isSelected: self == .pullups)
+            .init(type: .text(rawValue), formatted: rawValue.capitalized)
         }
     }
     
@@ -57,7 +62,7 @@ struct CallengePartModel: DropdownItemProtocol{
         case one = 1, two, three, four, five
         
         var toDropdownOption: DropdownOption {
-            .init(type: .number(rawValue), formatted: "\(rawValue)", isSelected: self == .one)
+            .init(type: .number(rawValue), formatted: "\(rawValue)")
         }
     }
     
@@ -65,14 +70,14 @@ struct CallengePartModel: DropdownItemProtocol{
         case one = 1, two, three, four, five
         
         var toDropdownOption: DropdownOption {
-            .init(type: .number(rawValue), formatted: "+\(rawValue)", isSelected: self == .one)
+            .init(type: .number(rawValue), formatted: "+\(rawValue)")
         }
     }
     enum LenghtOption: Int, CaseIterable, DropdownOptionProtocol{
         case saven = 7, fourteen = 14, twentyOne = 21, twentyEight = 28
         
         var toDropdownOption: DropdownOption {
-            .init(type: .number(rawValue), formatted: "\(rawValue) days", isSelected: self == .saven)
+            .init(type: .number(rawValue), formatted: "\(rawValue) days")
         }
     }
     

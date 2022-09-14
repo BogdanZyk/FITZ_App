@@ -20,40 +20,28 @@ final class CreateChallengeViewModel: ObservableObject{
         self.userServise = userServise
     }
     
-    @Published var dropdowns: [CallengePartModel] = [
-        .init(type: .exercise),
-        .init(type: .start),
-        .init(type: .increase),
-        .init(type: .length)
-    ]
+//    @Published var dropdowns: [CallengePartModel] = [
+//        .init(type: .exercise),
+//        .init(type: .start),
+//        .init(type: .increase),
+//        .init(type: .length)
+//    ]
+    
+    @Published var exerciseDropdowns = CallengePartModel(type: .exercise)
+    @Published var startDropdowns = CallengePartModel(type: .start)
+    @Published var increaseDropdowns = CallengePartModel(type: .increase)
+    @Published var lengthDropdowns = CallengePartModel(type: .length)
     
     
     enum Action{
-        case selectOption(index: Int)
         case createChallenge
     }
     
-    var hasSelectedDropdown: Bool{
-        selectedSelectedDropdownIndex != nil
-    }
-    
-    var selectedSelectedDropdownIndex: Int?{
-        dropdowns.enumerated().first(where: {$0.element.isSelected})?.offset
-    }
-    
-    var displayedOption: [DropdownOption]{
-        guard let index = selectedSelectedDropdownIndex else{return []}
-        return dropdowns[index].options
-    }
+
     
     func send(_ action: Action){
         
         switch action {
-        case let .selectOption(index):
-            guard let selectedSelectedDropdownIndex = selectedSelectedDropdownIndex else{return}
-            claerSelectedOptions()
-            dropdowns[selectedSelectedDropdownIndex].options[index].isSelected = true
-            clearSelectedDopdown()
         case .createChallenge:
             currentUserId().sink { completion in
                 switch completion{
@@ -71,23 +59,6 @@ final class CreateChallengeViewModel: ObservableObject{
         }
     }
     
-    public func clearIsSelectedAllDropdowns(){
-        dropdowns.indices.forEach { index in
-            dropdowns[index].isSelected = false
-        }
-    }
-    
-    private func claerSelectedOptions(){
-        guard let selectedSelectedDropdownIndex = selectedSelectedDropdownIndex else{return}
-        dropdowns[selectedSelectedDropdownIndex].options.indices.forEach{ index in
-            dropdowns[selectedSelectedDropdownIndex].options[index].isSelected = false
-        }
-    }
-    
-    private func clearSelectedDopdown(){
-        guard let selectedSelectedDropdownIndex = selectedSelectedDropdownIndex else{return}
-        dropdowns[selectedSelectedDropdownIndex].isSelected = false
-    }
     
     private func currentUserId() ->AnyPublisher<UserId, Error>{
         print("Get user id")

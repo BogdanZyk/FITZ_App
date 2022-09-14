@@ -31,17 +31,26 @@ struct DropdownView<T: DropdownItemProtocol>: View {
             
         }
         .padding()
+        .confirmationDialog("Select", isPresented: $dropdown.isSelected) {
+            confirmButtons
+        }
     }
 }
 
-//struct DropdownView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NavigationView {
-//            DropdownView()
-//        }
-//        NavigationView{
-//            DropdownView()
-//        }.environment(\.colorScheme, .dark)
-//        
-//    }
-//}
+extension DropdownView{
+    private var confirmButtons: some View{
+        Group {
+            
+
+            
+            ForEach(dropdown.options.indices, id: \.self){ index in
+                Button(dropdown.options[index].formatted, action: {
+                    dropdown.selectedOption = dropdown.options[index]
+                })
+            }
+           // Button("Cancel", role: .cancel, action: dropdown.clearIsSelectedAllDropdowns)
+        }
+    }
+}
+
+

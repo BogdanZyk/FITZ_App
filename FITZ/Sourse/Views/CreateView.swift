@@ -23,9 +23,6 @@ struct CreateView: View {
             .navigationTitle("Create")
         .navigationBarBackButtonHidden(true)
         }
-        .confirmationDialog("Select", isPresented: Binding<Bool>(get: {viewModel.hasSelectedDropdown}, set: { _ in })) {
-            confirmContent
-        }
     }
 }
 
@@ -39,9 +36,16 @@ struct CreateView_Previews: PreviewProvider {
 extension CreateView{
     
     private var dropDownList: some View{
-        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
-            DropdownView(dropdown: $viewModel.dropdowns[index])
+        Group{
+            DropdownView(dropdown: $viewModel.exerciseDropdowns)
+            DropdownView(dropdown: $viewModel.startDropdowns)
+            DropdownView(dropdown: $viewModel.increaseDropdowns)
+            DropdownView(dropdown: $viewModel.lengthDropdowns)
+            
         }
+//        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
+//            DropdownView(dropdown: $viewModel.dropdowns[index])
+//        }
     }
     
     private var nexButton: some View{
@@ -53,15 +57,5 @@ extension CreateView{
         }
     }
     
-    private var confirmContent: some View{
-        Group {
-            ForEach(viewModel.displayedOption.indices, id: \.self){ index in
-                Button(viewModel.displayedOption[index].formatted, action: {
-                    viewModel.send(.selectOption(index: index))
-                    
-                })
-            }
-            Button("Cancel", role: .cancel, action: viewModel.clearIsSelectedAllDropdowns)
-        }
-    }
+
 }
