@@ -83,3 +83,20 @@ struct CallengePartModel: DropdownItemProtocol{
     
     
 }
+
+
+extension CallengePartModel{
+    var text: String?{
+        if case let .text(text) = selectedOption.type{
+            return text
+        }
+        return nil
+    }
+    
+    var number: Int?{
+        if case let .number(number) = selectedOption.type{
+            return number
+        }
+        return nil
+    }
+}

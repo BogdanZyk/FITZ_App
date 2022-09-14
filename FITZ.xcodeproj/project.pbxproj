@@ -28,6 +28,8 @@
 		5A08652B28D2791400B44B00 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A08652A28D2791400B44B00 /* FirebaseFirestore */; };
 		5A08652D28D2791400B44B00 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A08652C28D2791400B44B00 /* FirebaseFirestoreSwift */; };
 		5A08653028D2797900B44B00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08652F28D2797900B44B00 /* AppDelegate.swift */; };
+		5A08653228D2884800B44B00 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653128D2884800B44B00 /* Challenge.swift */; };
+		5A08653428D2893100B44B00 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653328D2893100B44B00 /* ChallengeService.swift */; };
 		5A72871928D2745100DFC01A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72871828D2745100DFC01A /* UserService.swift */; };
 		5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -52,6 +54,8 @@
 		5A04685928D13C980040C122 /* DropdownOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownOptionProtocol.swift; sourceTree = "<group>"; };
 		5A04685B28D13DBA0040C122 /* CallengePartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallengePartModel.swift; sourceTree = "<group>"; };
 		5A08652F28D2797900B44B00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A08653128D2884800B44B00 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		5A08653328D2893100B44B00 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		5A72871828D2745100DFC01A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				5A04685B28D13DBA0040C122 /* CallengePartModel.swift */,
+				5A08653128D2884800B44B00 /* Challenge.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				5A72871828D2745100DFC01A /* UserService.swift */,
+				5A08653328D2893100B44B00 /* ChallengeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A04684128D1295B0040C122 /* View.swift in Sources */,
+				5A08653228D2884800B44B00 /* Challenge.swift in Sources */,
 				5A04685C28D13DBA0040C122 /* CallengePartModel.swift in Sources */,
 				5A04685A28D13C980040C122 /* DropdownOptionProtocol.swift in Sources */,
 				5A04684E28D131490040C122 /* CreateView.swift in Sources */,
@@ -290,6 +297,7 @@
 				5A04684228D1295B0040C122 /* Date.swift in Sources */,
 				5A04682A28D126870040C122 /* LandingView.swift in Sources */,
 				5A04685128D131AA0040C122 /* DropdownView.swift in Sources */,
+				5A08653428D2893100B44B00 /* ChallengeService.swift in Sources */,
 				5A04684828D12BE10040C122 /* PrimaryButtonStyle.swift in Sources */,
 				5A04684028D1295B0040C122 /* Image.swift in Sources */,
 				5A72871928D2745100DFC01A /* UserService.swift in Sources */,

@@ -14,10 +14,15 @@ final class CreateChallengeViewModel: ObservableObject{
     typealias UserId = String
     
     private let userServise: UserServiceProtocol
+    private let challengeService: ChallengeServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
-    init(userServise: UserServiceProtocol = UserService()){
+    init(
+        userServise: UserServiceProtocol = UserService(),
+        challengeService: ChallengeServiceProtocol = ChallengeService()
+    ){
         self.userServise = userServise
+        self.challengeService = challengeService
     }
     
 //    @Published var dropdowns: [CallengePartModel] = [
@@ -43,24 +48,43 @@ final class CreateChallengeViewModel: ObservableObject{
         
         switch action {
         case .createChallenge:
-            currentUserId().sink { completion in
+            currentUserId().flatMap { userId -> AnyPublisher<Void, Error> in
+                return self.createChallenge(userId: userId)
+            }.sink { completion in
                 switch completion{
                 case .finished:
-                    print("completion")
+                    print("finished")
                     break
                 case .failure(let error):
                     print(error.localizedDescription)
                 }
-            } receiveValue: { userId in
-                print("user id", userId)
+            } receiveValue: { _ in
+                print("success")
             }
             .store(in: &cancellables)
-
+            
         }
     }
     
+    private func createChallenge(userId: UserId) -> AnyPublisher<Void, Error>{
+        guard let exercise = exerciseDropdowns.text,
+              let startAmount = startDropdowns.number,
+              let increase = increaseDropdowns.number,
+              let lenght = lengthDropdowns.number else {
+            return Fail(error: NSError()).eraseToAnyPublisher()
+        }
+        let challenge = Challenge(
+            exercise: exercise,
+            startAmount: startAmount,
+            increase: increase,
+            lenght: lenght,
+            userId: userId,
+            startDate: Date())
+        return challengeService.create(challenge).eraseToAnyPublisher()
+    }
     
-    private func currentUserId() ->AnyPublisher<UserId, Error>{
+    
+    private func currentUserId() -> AnyPublisher<UserId, Error>{
         print("Get user id")
         return userServise.currentUser().flatMap{ user -> AnyPublisher<UserId, Error> in
             if let userId = user?.uid{
