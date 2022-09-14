@@ -30,6 +30,7 @@
 		5A08653028D2797900B44B00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08652F28D2797900B44B00 /* AppDelegate.swift */; };
 		5A08653228D2884800B44B00 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653128D2884800B44B00 /* Challenge.swift */; };
 		5A08653428D2893100B44B00 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653328D2893100B44B00 /* ChallengeService.swift */; };
+		5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28B28D290EF002E21E7 /* FitzError.swift */; };
 		5A72871928D2745100DFC01A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72871828D2745100DFC01A /* UserService.swift */; };
 		5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		5A08652F28D2797900B44B00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A08653128D2884800B44B00 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		5A08653328D2893100B44B00 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
+		5A6BF28B28D290EF002E21E7 /* FitzError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzError.swift; sourceTree = "<group>"; };
 		5A72871828D2745100DFC01A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 			children = (
 				5A04684528D12BA90040C122 /* Style */,
 				5A04683A28D1294B0040C122 /* Extensions */,
+				5A6BF28B28D290EF002E21E7 /* FitzError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				5A04685C28D13DBA0040C122 /* CallengePartModel.swift in Sources */,
 				5A04685A28D13C980040C122 /* DropdownOptionProtocol.swift in Sources */,
 				5A04684E28D131490040C122 /* CreateView.swift in Sources */,
+				5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */,
 				5A04685328D137170040C122 /* RemindView.swift in Sources */,
 				5A04684428D1295B0040C122 /* UIApplication.swift in Sources */,
 				5A04685528D1394D0040C122 /* CreateChallengeViewModel.swift in Sources */,

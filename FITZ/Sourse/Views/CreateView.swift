@@ -10,19 +10,20 @@ import SwiftUI
 struct CreateView: View {
     @StateObject private var viewModel = CreateChallengeViewModel()
     var body: some View {
-        ScrollView {
-            VStack(spacing: 10){
-                dropDownList
-//                NavigationLink(isActive: $showRemindView) {
-//                    RemindView()
-//                } label: {
-//                    
-//                }
-                nexButton
+        ZStack{
+            if viewModel.isLoading{
+                ProgressView()
+            }else{
+                mainContentView
             }
-            .navigationTitle("Create")
-        .navigationBarBackButtonHidden(true)
         }
+        .alert("Error!", isPresented: Binding<Bool>.constant($viewModel.error.wrappedValue != nil), actions: {
+            Button("OK") {viewModel.error = nil}
+        }, message: {
+            Text(viewModel.error?.localizedDescription ?? "")
+        })
+        .navigationTitle("Create")
+        .navigationBarBackButtonHidden(true)
     }
 }
 
@@ -32,6 +33,21 @@ struct CreateView_Previews: PreviewProvider {
     }
 }
 
+extension CreateView{
+    private var mainContentView: some View{
+        ScrollView {
+            VStack(spacing: 10){
+                dropDownList
+//                NavigationLink(isActive: $showRemindView) {
+//                    RemindView()
+//                } label: {
+//
+//                }
+                nexButton
+            }
+        }
+    }
+}
 
 extension CreateView{
     
