@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct FITZApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             LandingView()
         }
     }
 }
+
+
+

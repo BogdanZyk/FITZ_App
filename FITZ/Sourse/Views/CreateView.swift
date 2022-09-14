@@ -9,16 +9,16 @@ import SwiftUI
 
 struct CreateView: View {
     @StateObject private var viewModel = CreateChallengeViewModel()
-    @State private var showRemindView: Bool = false
     var body: some View {
         ScrollView {
             VStack(spacing: 10){
                 dropDownList
-                NavigationLink(isActive: $showRemindView) {
-                    RemindView()
-                } label: {
-                    nexButton
-                }
+//                NavigationLink(isActive: $showRemindView) {
+//                    RemindView()
+//                } label: {
+//                    
+//                }
+                nexButton
             }
             .navigationTitle("Create")
         .navigationBarBackButtonHidden(true)
@@ -46,9 +46,9 @@ extension CreateView{
     
     private var nexButton: some View{
         Button {
-            showRemindView.toggle()
+            viewModel.send(.createChallenge)
         } label: {
-            Text("Next")
+            Text("Create")
                 .font(.system(size: 24, weight: .medium))
         }
     }
