@@ -25,13 +25,6 @@ final class CreateChallengeViewModel: ObservableObject{
         self.challengeService = challengeService
     }
     
-//    @Published var dropdowns: [CallengePartModel] = [
-//        .init(type: .exercise),
-//        .init(type: .start),
-//        .init(type: .increase),
-//        .init(type: .length)
-//    ]
-    
     @Published var exerciseDropdowns = CallengePartModel(type: .exercise)
     @Published var startDropdowns = CallengePartModel(type: .start)
     @Published var increaseDropdowns = CallengePartModel(type: .increase)
@@ -53,7 +46,8 @@ final class CreateChallengeViewModel: ObservableObject{
             isLoading = true
             currentUserId().flatMap { userId -> AnyPublisher<Void, FitzError> in
                 return self.createChallenge(userId: userId)
-            }.sink { completion in
+            }
+            .sink { completion in
                 self.isLoading = false
                 switch completion{
                 case .finished:
@@ -66,7 +60,6 @@ final class CreateChallengeViewModel: ObservableObject{
                 print("success")
             }
             .store(in: &cancellables)
-            
         }
     }
     

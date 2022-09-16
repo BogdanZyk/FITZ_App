@@ -59,9 +59,6 @@ extension CreateView{
             DropdownView(dropdown: $viewModel.lengthDropdowns)
             
         }
-//        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
-//            DropdownView(dropdown: $viewModel.dropdowns[index])
-//        }
     }
     
     private var nexButton: some View{

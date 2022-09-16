@@ -31,6 +31,8 @@
 		5A08653228D2884800B44B00 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653128D2884800B44B00 /* Challenge.swift */; };
 		5A08653428D2893100B44B00 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653328D2893100B44B00 /* ChallengeService.swift */; };
 		5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28B28D290EF002E21E7 /* FitzError.swift */; };
+		5A6BF28F28D4DAFE002E21E7 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */; };
+		5A6BF29128D4DD16002E21E7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF29028D4DD15002E21E7 /* AppState.swift */; };
 		5A72871928D2745100DFC01A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72871828D2745100DFC01A /* UserService.swift */; };
 		5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		5A08653128D2884800B44B00 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		5A08653328D2893100B44B00 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		5A6BF28B28D290EF002E21E7 /* FitzError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzError.swift; sourceTree = "<group>"; };
+		5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
+		5A6BF29028D4DD15002E21E7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		5A72871828D2745100DFC01A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +142,7 @@
 		5A04684628D12BC80040C122 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5A6BF28D28D4DAE2002E21E7 /* Publishers */,
 				5A04684528D12BA90040C122 /* Style */,
 				5A04683A28D1294B0040C122 /* Extensions */,
 				5A6BF28B28D290EF002E21E7 /* FitzError.swift */,
@@ -201,11 +206,20 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		5A6BF28D28D4DAE2002E21E7 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
 		5A72871728D273C900DFC01A /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				5A72871828D2745100DFC01A /* UserService.swift */,
 				5A08653328D2893100B44B00 /* ChallengeService.swift */,
+				5A6BF29028D4DD15002E21E7 /* AppState.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -296,6 +310,7 @@
 				5A04684E28D131490040C122 /* CreateView.swift in Sources */,
 				5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */,
 				5A04685328D137170040C122 /* RemindView.swift in Sources */,
+				5A6BF28F28D4DAFE002E21E7 /* AuthPublisher.swift in Sources */,
 				5A04684428D1295B0040C122 /* UIApplication.swift in Sources */,
 				5A04685528D1394D0040C122 /* CreateChallengeViewModel.swift in Sources */,
 				5A04684228D1295B0040C122 /* Date.swift in Sources */,
@@ -305,6 +320,7 @@
 				5A04684828D12BE10040C122 /* PrimaryButtonStyle.swift in Sources */,
 				5A04684028D1295B0040C122 /* Image.swift in Sources */,
 				5A72871928D2745100DFC01A /* UserService.swift in Sources */,
+				5A6BF29128D4DD16002E21E7 /* AppState.swift in Sources */,
 				5A04682828D126870040C122 /* FITZApp.swift in Sources */,
 				5A04685828D139F90040C122 /* DropdownItemProtocol.swift in Sources */,
 				5A08653028D2797900B44B00 /* AppDelegate.swift in Sources */,
