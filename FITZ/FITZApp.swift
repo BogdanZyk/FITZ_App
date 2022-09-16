@@ -14,13 +14,7 @@ struct FITZApp: App {
     var body: some Scene {
         WindowGroup {
             if apppState.isLoggedIn{
-                TabView{
-                    Text("Log")
-                    
-                        .tabItem {
-                            Image(systemName: "book")
-                        }
-                }.accentColor(.primary)
+                TabContainerView()
             }else{
                 LandingView()
             }
