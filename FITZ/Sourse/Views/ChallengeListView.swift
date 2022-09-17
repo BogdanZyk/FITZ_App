@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ChallengeListView: View {
+    @StateObject private var challengeVM = ChallengeListViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ScrollView{
+                LazyVGrid(columns: Array.init(repeating: GridItem(.flexible()), count: 2)) {
+                    ForEach(challengeVM.itemModels, id: \.self){item in
+                        ChallengeItemView(challengeItem: item)
+                    }
+                }
+            }.navigationTitle("Challenges")
+        }
     }
 }
 

@@ -39,7 +39,7 @@ extension TabContainerView{
         case .log:
             Text("Log")
         case .challengeList:
-            Text("Challenge List")
+            ChallengeListView()
         case .settings:
             Text("Settings")
         }

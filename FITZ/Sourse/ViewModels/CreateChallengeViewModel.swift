@@ -7,12 +7,11 @@
 import Combine
 import SwiftUI
 
-
+typealias UserId = String
 
 final class CreateChallengeViewModel: ObservableObject{
     
-    typealias UserId = String
-    
+   
     private let userServise: UserServiceProtocol
     private let challengeService: ChallengeServiceProtocol
     private var cancellables = Set<AnyCancellable>()
