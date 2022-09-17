@@ -42,6 +42,10 @@
 		5A6BF2A028D4FDC7002E21E7 /* FBConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF29F28D4FDC7002E21E7 /* FBConstants.swift */; };
 		5A6BF2A428D503BE002E21E7 /* ChallengeItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2A328D503BE002E21E7 /* ChallengeItemModel.swift */; };
 		5A6BF2A628D50C0D002E21E7 /* ChallengeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2A528D50C0D002E21E7 /* ChallengeItemView.swift */; };
+		5A6BF2A828D68B83002E21E7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2A728D68B83002E21E7 /* SettingsView.swift */; };
+		5A6BF2AA28D68BD0002E21E7 /* SettingsItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2A928D68BD0002E21E7 /* SettingsItemModel.swift */; };
+		5A6BF2AC28D68BE5002E21E7 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2AB28D68BE5002E21E7 /* SettingsViewModel.swift */; };
+		5A6BF2AF28D69220002E21E7 /* CreateChallengeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2AE28D69220002E21E7 /* CreateChallengeModalView.swift */; };
 		5A72871928D2745100DFC01A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72871828D2745100DFC01A /* UserService.swift */; };
 		5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -80,6 +84,10 @@
 		5A6BF29F28D4FDC7002E21E7 /* FBConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBConstants.swift; sourceTree = "<group>"; };
 		5A6BF2A328D503BE002E21E7 /* ChallengeItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeItemModel.swift; sourceTree = "<group>"; };
 		5A6BF2A528D50C0D002E21E7 /* ChallengeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeItemView.swift; sourceTree = "<group>"; };
+		5A6BF2A728D68B83002E21E7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5A6BF2A928D68BD0002E21E7 /* SettingsItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItemModel.swift; sourceTree = "<group>"; };
+		5A6BF2AB28D68BE5002E21E7 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		5A6BF2AE28D69220002E21E7 /* CreateChallengeModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeModalView.swift; sourceTree = "<group>"; };
 		5A72871828D2745100DFC01A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +197,8 @@
 				5A04685228D137170040C122 /* RemindView.swift */,
 				5A6BF29228D4E006002E21E7 /* TabContainerView.swift */,
 				5A6BF29828D4F70F002E21E7 /* ChallengeListView.swift */,
+				5A6BF2A728D68B83002E21E7 /* SettingsView.swift */,
+				5A6BF2AE28D69220002E21E7 /* CreateChallengeModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +209,7 @@
 				5A04685428D1394D0040C122 /* CreateChallengeViewModel.swift */,
 				5A6BF29428D4E04A002E21E7 /* TabContainerViewModel.swift */,
 				5A6BF29A28D4F72D002E21E7 /* ChallengeListViewModel.swift */,
+				5A6BF2AB28D68BE5002E21E7 /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -210,6 +221,7 @@
 				5A08653128D2884800B44B00 /* Challenge.swift */,
 				5A6BF29628D4E083002E21E7 /* TabItem.swift */,
 				5A6BF2A328D503BE002E21E7 /* ChallengeItemModel.swift */,
+				5A6BF2A928D68BD0002E21E7 /* SettingsItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,6 +357,7 @@
 				5A6BF29728D4E083002E21E7 /* TabItem.swift in Sources */,
 				5A04685A28D13C980040C122 /* DropdownOptionProtocol.swift in Sources */,
 				5A04684E28D131490040C122 /* CreateView.swift in Sources */,
+				5A6BF2AF28D69220002E21E7 /* CreateChallengeModalView.swift in Sources */,
 				5A6BF2A628D50C0D002E21E7 /* ChallengeItemView.swift in Sources */,
 				5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */,
 				5A04685328D137170040C122 /* RemindView.swift in Sources */,
@@ -360,9 +373,12 @@
 				5A04685128D131AA0040C122 /* DropdownView.swift in Sources */,
 				5A08653428D2893100B44B00 /* ChallengeService.swift in Sources */,
 				5A04684828D12BE10040C122 /* PrimaryButtonStyle.swift in Sources */,
+				5A6BF2AA28D68BD0002E21E7 /* SettingsItemModel.swift in Sources */,
 				5A6BF29B28D4F72D002E21E7 /* ChallengeListViewModel.swift in Sources */,
 				5A04684028D1295B0040C122 /* Image.swift in Sources */,
+				5A6BF2AC28D68BE5002E21E7 /* SettingsViewModel.swift in Sources */,
 				5A72871928D2745100DFC01A /* UserService.swift in Sources */,
+				5A6BF2A828D68B83002E21E7 /* SettingsView.swift in Sources */,
 				5A6BF29128D4DD16002E21E7 /* AppState.swift in Sources */,
 				5A04682828D126870040C122 /* FITZApp.swift in Sources */,
 				5A6BF29928D4F70F002E21E7 /* ChallengeListView.swift in Sources */,

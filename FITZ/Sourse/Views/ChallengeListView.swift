@@ -11,32 +11,28 @@ struct ChallengeListView: View {
     @StateObject private var challengeVM = ChallengeListViewModel()
     let columns: [GridItem] = Array.init(repeating: GridItem(.flexible(), spacing: 20), count: 2)
     var body: some View {
-        NavigationView {
-            ZStack{
-                if challengeVM.isLoading{
-                    ProgressView()
-                }else if let error = challengeVM.error{
-                    errorView(error)
-                }else{
-                    mainContentView
+        ZStack{
+            if challengeVM.isLoading{
+                ProgressView()
+            }else if let error = challengeVM.error{
+                errorView(error)
+            }else{
+                mainContentView
+            }
+        }
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    challengeVM.send(.create)
+                } label: {
+                    Image(systemName: "plus.circle").imageScale(.large)
                 }
             }
-            .toolbar{
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        challengeVM.send(.create)
-                    } label: {
-                        Image(systemName: "plus.circle").imageScale(.large)
-                    }
-                }
-            }
-            .navigationBarTitleDisplayMode(.large)
-            .navigationTitle("Challenges")
-            .sheet(isPresented: $challengeVM.showCreateModal) {
-                NavigationView{
-                    CreateView()
-                }
-            }
+        }
+        .navigationBarTitleDisplayMode(.large)
+        .navigationTitle("Challenges")
+        .sheet(isPresented: $challengeVM.showCreateModal) {
+            CreateChallengeModalView()
         }
     }
 }
