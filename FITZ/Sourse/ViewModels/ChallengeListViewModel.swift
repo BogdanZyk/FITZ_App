@@ -14,7 +14,9 @@ final class ChallengeListViewModel: ObservableObject{
     private var cancellables = Set<AnyCancellable>()
     
     @Published private(set) var itemModels = [ChallengeItemModel]()
-    
+    @Published private(set) var error: FitzError?
+    @Published private(set) var isLoading: Bool = false
+    @Published var showCreateModal: Bool = false
     
     init(userService: UserServiceProtocol = UserService(),
          challengeService: ChallengeServiceProtocol = ChallengeService())
@@ -24,18 +26,40 @@ final class ChallengeListViewModel: ObservableObject{
         observedChallenges()
     }
     
+    enum Action{
+        case retry
+        case create
+    }
+    
+    func send(_ action: Action){
+        switch action {
+        case .retry:
+            observedChallenges()
+        case .create:
+            showCreateModal.toggle()
+        }
+    }
+    
     private func observedChallenges(){
+        isLoading = true
         userService.currentUser().compactMap {$0?.uid}
-            .flatMap { userId -> AnyPublisher<[Challenge], FitzError> in
+            .flatMap { [weak self] userId -> AnyPublisher<[Challenge], FitzError> in
+                guard let self = self else {return Fail(error: .default()).eraseToAnyPublisher()}
                 return self.challengeService.observedChallenge(userId: userId)
-            }.sink { completion in
+            }.sink {[weak self] completion in
+                guard let self = self else {return}
+                self.isLoading = false
                 switch completion{
                 case .finished:
                     print("finished")
                 case .failure(let error):
-                    print(error)
+                    self.error = error
                 }
-            } receiveValue: { challenges in
+            } receiveValue: { [weak self] challenges in
+                guard let self = self else {return}
+                self.isLoading = false
+                self.error = nil
+                self.showCreateModal = false
                 self.itemModels = challenges.map{.init($0)}
             }
             .store(in: &cancellables)

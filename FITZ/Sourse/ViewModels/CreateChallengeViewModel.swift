@@ -29,6 +29,7 @@ final class CreateChallengeViewModel: ObservableObject{
     @Published var increaseDropdowns = CallengePartModel(type: .increase)
     @Published var lengthDropdowns = CallengePartModel(type: .length)
     
+    
     @Published var error: FitzError?
     @Published var isLoading: Bool = false
     
@@ -43,7 +44,8 @@ final class CreateChallengeViewModel: ObservableObject{
         switch action {
         case .createChallenge:
             isLoading = true
-            currentUserId().flatMap { userId -> AnyPublisher<Void, FitzError> in
+            currentUserId().flatMap { [weak self] userId -> AnyPublisher<Void, FitzError> in
+                guard let self = self else {return Fail(error: .default()).eraseToAnyPublisher()}
                 return self.createChallenge(userId: userId)
             }
             .sink { completion in

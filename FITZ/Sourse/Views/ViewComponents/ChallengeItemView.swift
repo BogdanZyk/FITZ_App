@@ -13,25 +13,49 @@ struct ChallengeItemView: View {
         HStack{
             Spacer()
             VStack{
-                Text(challengeItem.title)
-                    .font(.system(size: 24, weight: .bold))
+                titleRowView
                 Text(challengeItem.statusText)
-                Text(challengeItem.dayilyIncreaseText)
+                    .font(.system(size: 12, weight: .bold))
+                    .padding(25)
+                daylyIncreaseRow
             }
-            .padding()
+            .padding(.vertical, 10)
             Spacer()
         }
        
         .background(
-            Rectangle().fill(Color.darkPrimaryButton)
+            Rectangle().fill(Color.primaryButton)
                 .cornerRadius(5)
         )
-        .padding()
     }
 }
 
 struct ChallengeItemView_Previews: PreviewProvider {
     static var previews: some View {
         ChallengeItemView(challengeItem: ChallengeItemModel(Challenge(exercise: "situps", startAmount: 4, increase: 4, lenght: 21, userId: "", startDate: Date())))
+            .preferredColorScheme(.dark)
+    }
+}
+
+extension ChallengeItemView{
+    private var titleRowView: some View{
+        HStack {
+            Text(challengeItem.title)
+                .font(.system(size: 24, weight: .bold))
+            Spacer()
+            
+            Button {
+                
+            } label: {
+                Image(systemName: "trash")
+            }
+        }
+    }
+    
+    private var daylyIncreaseRow: some View{
+        HStack {
+            Text(challengeItem.dayilyIncreaseText)
+            Spacer()
+        }
     }
 }
