@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChallengeListView: View {
     @StateObject private var challengeVM = ChallengeListViewModel()
+    @State private var showCreateModal: Bool = false
     let columns: [GridItem] = Array.init(repeating: GridItem(.flexible(), spacing: 20), count: 2)
     var body: some View {
         ZStack{
@@ -20,6 +21,7 @@ struct ChallengeListView: View {
                 mainContentView
             }
         }
+        .sync($challengeVM.showCreateModal, with: $showCreateModal)
         .toolbar{
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -31,7 +33,7 @@ struct ChallengeListView: View {
         }
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Challenges")
-        .sheet(isPresented: $challengeVM.showCreateModal) {
+        .sheet(isPresented: $showCreateModal) {
             CreateChallengeModalView()
         }
     }

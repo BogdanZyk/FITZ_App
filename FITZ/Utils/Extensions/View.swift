@@ -50,6 +50,20 @@ extension View{
         self
             .frame(maxWidth: .infinity, alignment: .trailing)
     }
+    
+    
+    // fix new bug in Xcode 14
+    ///error Publishing changes from within view updates is not allowed, this will cause undefined behavior.
+    func sync<T:Equatable>(_ published:Binding<T>, with binding:Binding<T>)-> some View{
+        self
+            .onChange(of: published.wrappedValue) { published in
+                binding.wrappedValue = published
+            }
+            .onChange(of: binding.wrappedValue) { binding in
+                published.wrappedValue = binding
+            }
+    }
+    
 }
 
 
