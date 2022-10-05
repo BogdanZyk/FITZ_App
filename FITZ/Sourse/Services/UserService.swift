@@ -9,15 +9,25 @@ import Combine
 import FirebaseAuth
 
 protocol UserServiceProtocol{
-    func currentUser() -> AnyPublisher<User?, Never>
+    var currentUser: User? { get }
+    func currentUserPublished() -> AnyPublisher<User?, Never>
     func signInAnonymously() -> AnyPublisher<User, FitzError>
     func observedAuthChanges() -> AnyPublisher<User?, Never>
+    func linkAccount(email: String, pass: String) -> AnyPublisher<Void, FitzError>
+    func logout() -> AnyPublisher<Void, FitzError>
+    func login(email: String, pass: String) -> AnyPublisher<Void, FitzError>
+    
 }
 
 
 final class UserService: UserServiceProtocol{
+
     
-    func currentUser() -> AnyPublisher<User?, Never> {
+
+    
+    var currentUser: User? = Auth.auth().currentUser
+    
+    func currentUserPublished() -> AnyPublisher<User?, Never> {
         Just(Auth.auth().currentUser).eraseToAnyPublisher()
     }
     
@@ -36,4 +46,41 @@ final class UserService: UserServiceProtocol{
     func observedAuthChanges() -> AnyPublisher<User?, Never> {
         Publishers.AuthPublisher().eraseToAnyPublisher()
     }
+    
+    func linkAccount(email: String, pass: String) -> AnyPublisher<Void, FitzError> {
+        let emailCredation = EmailAuthProvider.credential(withEmail: email, password: pass)
+        return Future<Void, FitzError>{ promise in
+            Auth.auth().currentUser?.link(with: emailCredation){result, error in
+                if let error = error{
+                    return promise(.failure(.default(description: error.localizedDescription)))
+                }else{
+                    promise(.success(()))
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func login(email: String, pass: String) -> AnyPublisher<Void, FitzError> {
+        return Future<Void, FitzError>{ promise in
+            Auth.auth().signIn(withEmail: email, password: pass) { result, error in
+                if let error = error{
+                    promise(.failure(.default(description: error.localizedDescription)))
+                }else{
+                    promise(.success(()))
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    func logout() -> AnyPublisher<Void, FitzError>{
+        return Future<Void, FitzError>{ promise in
+            do {
+                try Auth.auth().signOut()
+                promise(.success(()))
+            } catch{
+                promise(.failure(.default(description: error.localizedDescription)))
+            }
+        }.eraseToAnyPublisher()
+    }
+    
 }

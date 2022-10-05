@@ -84,7 +84,7 @@ final class CreateChallengeViewModel: ObservableObject{
     
     private func currentUserId() -> AnyPublisher<UserId, FitzError>{
         print("Get user id")
-        return userServise.currentUser().flatMap{ user -> AnyPublisher<UserId, FitzError> in
+        return userServise.currentUserPublished().flatMap{ user -> AnyPublisher<UserId, FitzError> in
             if let userId = user?.uid{
                 print("userId", userId)
                 return Just(userId).setFailureType(to: FitzError.self).eraseToAnyPublisher()

@@ -21,11 +21,13 @@ struct ChallengeItemModel: Hashable{
     }
     
     private var isComplete: Bool{
-        daysFromStart - challenge.lenght > 0
+        daysFromStart - challenge.lenght >= 0
     }
     
     private var daysFromStart: Int{
-        guard let daysFromStart = Calendar.current.dateComponents([.day], from: challenge.startDate, to: Date()).day else {return 0}
+        let startDate = Calendar.current.startOfDay(for: challenge.startDate)
+        let toDate = Calendar.current.startOfDay(for: Date())
+        guard let daysFromStart = Calendar.current.dateComponents([.day], from: startDate, to: toDate).day else {return 0}
         return abs(daysFromStart)
     }
     

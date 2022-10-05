@@ -14,6 +14,13 @@ struct SettingsView: View {
             settingRowView(settingVM.settingItem[index])
         }
         .navigationTitle("Settings")
+        .background{
+            NavigationLink(isActive: $settingVM.loginSingupPushed) {
+                LoginSignupView(viewModel: LoginSignupViewModel(mode: .signup, isPushed: $settingVM.loginSingupPushed))
+            } label: {
+                EmptyView()
+            }
+        }
         .onAppear{
             settingVM.onAppear()
         }
@@ -22,7 +29,9 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        NavigationView {
+            SettingsView()
+        }
     }
 }
 
