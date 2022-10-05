@@ -24,10 +24,10 @@ final class CreateChallengeViewModel: ObservableObject{
         self.challengeService = challengeService
     }
     
-    @Published var exerciseDropdowns = CallengePartModel(type: .exercise)
-    @Published var startDropdowns = CallengePartModel(type: .start)
-    @Published var increaseDropdowns = CallengePartModel(type: .increase)
-    @Published var lengthDropdowns = CallengePartModel(type: .length)
+    @Published var exerciseDropdowns = ChallengePartModel(type: .exercise)
+    @Published var startDropdowns = ChallengePartModel(type: .start)
+    @Published var increaseDropdowns = ChallengePartModel(type: .increase)
+    @Published var lengthDropdowns = ChallengePartModel(type: .length)
     
     
     @Published var error: FitzError?
@@ -83,13 +83,11 @@ final class CreateChallengeViewModel: ObservableObject{
     
     
     private func currentUserId() -> AnyPublisher<UserId, FitzError>{
-        print("Get user id")
         return userServise.currentUserPublished().flatMap{ user -> AnyPublisher<UserId, FitzError> in
             if let userId = user?.uid{
                 print("userId", userId)
                 return Just(userId).setFailureType(to: FitzError.self).eraseToAnyPublisher()
             }else{
-                print("user is inAnonymously")
                 return self.userServise.signInAnonymously()
                     .map({$0.uid})
                     .eraseToAnyPublisher()

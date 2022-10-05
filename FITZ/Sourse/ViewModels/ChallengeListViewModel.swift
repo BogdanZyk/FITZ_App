@@ -4,7 +4,7 @@
 //
 //  Created by Bogdan Zykov on 16.09.2022.
 //
-
+import SwiftUI
 import Combine
 
 final class ChallengeListViewModel: ObservableObject{
@@ -59,8 +59,9 @@ final class ChallengeListViewModel: ObservableObject{
                 guard let self = self else {return}
                 self.isLoading = false
                 self.error = nil
-                self.showCreateModal = false
                 self.itemModels = challenges.map{.init($0)}
+                self.showCreateModal = false
+                
             }
             .store(in: &cancellables)
 

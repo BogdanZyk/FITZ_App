@@ -23,7 +23,7 @@
 		5A04685528D1394D0040C122 /* CreateChallengeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04685428D1394D0040C122 /* CreateChallengeViewModel.swift */; };
 		5A04685828D139F90040C122 /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04685728D139F90040C122 /* DropdownItemProtocol.swift */; };
 		5A04685A28D13C980040C122 /* DropdownOptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04685928D13C980040C122 /* DropdownOptionProtocol.swift */; };
-		5A04685C28D13DBA0040C122 /* CallengePartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04685B28D13DBA0040C122 /* CallengePartModel.swift */; };
+		5A04685C28D13DBA0040C122 /* ChallengePartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04685B28D13DBA0040C122 /* ChallengePartModel.swift */; };
 		5A08652928D2791400B44B00 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A08652828D2791400B44B00 /* FirebaseAuth */; };
 		5A08652B28D2791400B44B00 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5A08652A28D2791400B44B00 /* FirebaseFirestore */; };
 		5A08652D28D2791400B44B00 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A08652C28D2791400B44B00 /* FirebaseFirestoreSwift */; };
@@ -50,6 +50,8 @@
 		5A6BF2B428D698E4002E21E7 /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2B328D698E4002E21E7 /* LoginSignupView.swift */; };
 		5A6BF2B628D6992B002E21E7 /* LoginSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2B528D6992B002E21E7 /* LoginSignupViewModel.swift */; };
 		5A6BF2B828D69E8C002E21E7 /* TextFieldRoundedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2B728D69E8C002E21E7 /* TextFieldRoundedStyle.swift */; };
+		5A6C7A8328EE0CE70008E310 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8228EE0CE70008E310 /* ProgressCircleView.swift */; };
+		5A6C7A8528EE0D2F0008E310 /* ProgressCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8428EE0D2F0008E310 /* ProgressCircleModel.swift */; };
 		5A72871928D2745100DFC01A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72871828D2745100DFC01A /* UserService.swift */; };
 		5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -72,7 +74,7 @@
 		5A04685428D1394D0040C122 /* CreateChallengeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChallengeViewModel.swift; sourceTree = "<group>"; };
 		5A04685728D139F90040C122 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
 		5A04685928D13C980040C122 /* DropdownOptionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownOptionProtocol.swift; sourceTree = "<group>"; };
-		5A04685B28D13DBA0040C122 /* CallengePartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallengePartModel.swift; sourceTree = "<group>"; };
+		5A04685B28D13DBA0040C122 /* ChallengePartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengePartModel.swift; sourceTree = "<group>"; };
 		5A08652F28D2797900B44B00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A08653128D2884800B44B00 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		5A08653328D2893100B44B00 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
@@ -96,6 +98,8 @@
 		5A6BF2B328D698E4002E21E7 /* LoginSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
 		5A6BF2B528D6992B002E21E7 /* LoginSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewModel.swift; sourceTree = "<group>"; };
 		5A6BF2B728D69E8C002E21E7 /* TextFieldRoundedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRoundedStyle.swift; sourceTree = "<group>"; };
+		5A6C7A8228EE0CE70008E310 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
+		5A6C7A8428EE0D2F0008E310 /* ProgressCircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleModel.swift; sourceTree = "<group>"; };
 		5A72871828D2745100DFC01A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,7 +233,8 @@
 		5A04684C28D131390040C122 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5A04685B28D13DBA0040C122 /* CallengePartModel.swift */,
+				5A6C7A8428EE0D2F0008E310 /* ProgressCircleModel.swift */,
+				5A04685B28D13DBA0040C122 /* ChallengePartModel.swift */,
 				5A08653128D2884800B44B00 /* Challenge.swift */,
 				5A6BF29628D4E083002E21E7 /* TabItem.swift */,
 				5A6BF2A328D503BE002E21E7 /* ChallengeItemModel.swift */,
@@ -243,6 +248,7 @@
 			children = (
 				5A04685028D131AA0040C122 /* DropdownView.swift */,
 				5A6BF2A528D50C0D002E21E7 /* ChallengeItemView.swift */,
+				5A6C7A8228EE0CE70008E310 /* ProgressCircleView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -372,7 +378,7 @@
 			files = (
 				5A04684128D1295B0040C122 /* View.swift in Sources */,
 				5A08653228D2884800B44B00 /* Challenge.swift in Sources */,
-				5A04685C28D13DBA0040C122 /* CallengePartModel.swift in Sources */,
+				5A04685C28D13DBA0040C122 /* ChallengePartModel.swift in Sources */,
 				5A6BF29D28D4F82C002E21E7 /* QuerySnapshotPublisher.swift in Sources */,
 				5A6BF29728D4E083002E21E7 /* TabItem.swift in Sources */,
 				5A04685A28D13C980040C122 /* DropdownOptionProtocol.swift in Sources */,
@@ -385,12 +391,14 @@
 				5A6BF2A028D4FDC7002E21E7 /* FBConstants.swift in Sources */,
 				5A6BF28F28D4DAFE002E21E7 /* AuthPublisher.swift in Sources */,
 				5A04684428D1295B0040C122 /* UIApplication.swift in Sources */,
+				5A6C7A8528EE0D2F0008E310 /* ProgressCircleModel.swift in Sources */,
 				5A6BF2A428D503BE002E21E7 /* ChallengeItemModel.swift in Sources */,
 				5A04685528D1394D0040C122 /* CreateChallengeViewModel.swift in Sources */,
 				5A04684228D1295B0040C122 /* Date.swift in Sources */,
 				5A04682A28D126870040C122 /* LandingView.swift in Sources */,
 				5A6BF29528D4E04A002E21E7 /* TabContainerViewModel.swift in Sources */,
 				5A6BF2B428D698E4002E21E7 /* LoginSignupView.swift in Sources */,
+				5A6C7A8328EE0CE70008E310 /* ProgressCircleView.swift in Sources */,
 				5A6BF29328D4E006002E21E7 /* TabContainerView.swift in Sources */,
 				5A04685128D131AA0040C122 /* DropdownView.swift in Sources */,
 				5A08653428D2893100B44B00 /* ChallengeService.swift in Sources */,

@@ -70,6 +70,6 @@ extension LoginSignupView{
                 
         }
         .buttonStyle(PrimaryButtonStyle())
-        .disabled(viewModel.isValid)
+        .disabled(!viewModel.isValid)
     }
 }

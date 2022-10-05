@@ -1,5 +1,5 @@
 //
-//  CallengePartModel.swift
+//  ChallengePartModel.swift
 //  FITZ
 //
 //  Created by Bogdan Zykov on 14.09.2022.
@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct CallengePartModel: DropdownItemProtocol{
+struct ChallengePartModel: DropdownItemProtocol{
     
     var isSelected: Bool = false
     
@@ -85,7 +85,7 @@ struct CallengePartModel: DropdownItemProtocol{
 }
 
 
-extension CallengePartModel{
+extension ChallengePartModel{
     var text: String?{
         if case let .text(text) = selectedOption.type{
             return text

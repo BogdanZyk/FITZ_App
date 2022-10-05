@@ -35,8 +35,11 @@ final class SettingsViewModel: ObservableObject{
             guard userService.currentUser?.email == nil else {return}
             loginSingupPushed.toggle()
         case .mode:
-            isDarkMode.toggle()
-            buildItems()
+            DispatchQueue.main.async {
+                self.isDarkMode.toggle()
+                self.buildItems()
+            }
+            
         case .privacy:
             break
         case .logout:

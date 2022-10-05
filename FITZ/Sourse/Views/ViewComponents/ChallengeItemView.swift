@@ -14,15 +14,14 @@ struct ChallengeItemView: View {
             Spacer()
             VStack{
                 titleRowView
-                Text(challengeItem.statusText)
-                    .font(.system(size: 12, weight: .bold))
+                ProgressCircleView(progressModel: challengeItem.progressCircleModel)
                     .padding(25)
                 daylyIncreaseRow
             }
             .padding(.vertical, 10)
             Spacer()
         }
-       
+        
         .background(
             Rectangle().fill(Color.primaryButton)
                 .cornerRadius(5)
@@ -55,6 +54,7 @@ extension ChallengeItemView{
     private var daylyIncreaseRow: some View{
         HStack {
             Text(challengeItem.dayilyIncreaseText)
+                .font(.caption.weight(.semibold))
             Spacer()
         }
     }

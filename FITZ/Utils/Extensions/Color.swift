@@ -12,6 +12,8 @@ extension Color {
     
     static let darkPrimaryButton = Color("darkPrimaryButton")
     static let primaryButton = Color("primaryButton")
+    static let circleOutline = Color("circleOutline")
+    static let circleTrack = Color("circleTrack")
 //    static let accentOrange = Color("accentOrange")
 //    static let backgroung = Color("bg")
 //    static let fontSecondary = Color("fontSecondary")
