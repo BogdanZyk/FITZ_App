@@ -17,9 +17,19 @@ struct LoginSignupView: View {
     
     var body: some View {
         VStack(spacing: 15){
-           
+            if viewModel.isSignUpMode{
+                Button {
+                    isPushed.toggle()
+                } label: {
+                    Image(systemName: "xmark")
+                }
+                .hLeading()
+            }
             textContent
             
+            if viewModel.isSignUpMode{
+                useraNameTextField
+            }
             emailTextField
             passTextField
             
@@ -27,6 +37,7 @@ struct LoginSignupView: View {
             
             Spacer()
         }
+        .handle(isPresented: $viewModel.showAlert, message: viewModel.error?.localizedDescription)
         .padding()
         .onReceive(viewModel.$isPushed) { isPushed in
             self.isPushed = isPushed
@@ -58,6 +69,12 @@ extension LoginSignupView{
     
     private var emailTextField: some View{
         TextField("Email", text: $viewModel.email)
+            .modifier(TextFieldCustomRoundedStyle())
+            .textInputAutocapitalization(.never)
+    }
+    
+    private var useraNameTextField: some View{
+        TextField("Name", text: $viewModel.userName)
             .modifier(TextFieldCustomRoundedStyle())
             .textInputAutocapitalization(.never)
     }

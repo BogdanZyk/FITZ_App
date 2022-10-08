@@ -30,6 +30,7 @@
 		5A08653028D2797900B44B00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08652F28D2797900B44B00 /* AppDelegate.swift */; };
 		5A08653228D2884800B44B00 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653128D2884800B44B00 /* Challenge.swift */; };
 		5A08653428D2893100B44B00 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653328D2893100B44B00 /* ChallengeService.swift */; };
+		5A1EA71A28F237B100BE36C9 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */; };
 		5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28B28D290EF002E21E7 /* FitzError.swift */; };
 		5A6BF28F28D4DAFE002E21E7 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */; };
 		5A6BF29128D4DD16002E21E7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF29028D4DD15002E21E7 /* AppState.swift */; };
@@ -79,6 +80,7 @@
 		5A08652F28D2797900B44B00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A08653128D2884800B44B00 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		5A08653328D2893100B44B00 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
+		5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		5A6BF28B28D290EF002E21E7 /* FitzError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzError.swift; sourceTree = "<group>"; };
 		5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
 		5A6BF29028D4DD15002E21E7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				5A6BF28B28D290EF002E21E7 /* FitzError.swift */,
+				5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */,
 			);
 			path = Errors;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				5A04685A28D13C980040C122 /* DropdownOptionProtocol.swift in Sources */,
 				5A04684E28D131490040C122 /* CreateView.swift in Sources */,
 				5A6BF2AF28D69220002E21E7 /* CreateChallengeModalView.swift in Sources */,
+				5A1EA71A28F237B100BE36C9 /* ErrorHandler.swift in Sources */,
 				5A6C7A8728EE26B90008E310 /* testView.swift in Sources */,
 				5A6BF2A628D50C0D002E21E7 /* ChallengeItemView.swift in Sources */,
 				5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */,

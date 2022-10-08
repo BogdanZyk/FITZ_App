@@ -14,9 +14,12 @@ final class LoginSignupViewModel: ObservableObject{
     private var mode: Mode
     
     @Published var email: String = ""
+    @Published var userName: String = ""
     @Published var password: String = ""
     @Published var isValid: Bool = false
     @Published var isPushed: Bool = true
+    @Published var showAlert: Bool = false
+    @Published var error: FitzError?
     private let userService: UserServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
@@ -27,12 +30,16 @@ final class LoginSignupViewModel: ObservableObject{
         self.mode = mode
         self.userService = userService
         
-        Publishers.CombineLatest($email, $password)
+        Publishers.CombineLatest3($email, $password, $userName)
             .debounce(for: .seconds(0.2), scheduler: DispatchQueue.main)
-            .map{ [weak self] (email, pass) in
+            .map{ [weak self] (email, pass, name) in
                 guard let self = self else {return false}
-                return self.isValidEmail(email) && self.isValidPass(pass)
+                return self.isValidEmail(email) && self.isValidPass(pass) && self.isValidName(name)
             }.assign(to: &$isValid)
+    }
+    
+    var isSignUpMode: Bool{
+        mode == .signup
     }
     
     var title: String{
@@ -70,11 +77,13 @@ final class LoginSignupViewModel: ObservableObject{
             
         case .login:
             userService.login(email: email, pass: password)
-                .sink { completion in
+                .sink {[weak self] completion in
+                    guard let self = self else {return}
                     switch completion{
                     case .finished: break
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        self.showAlert = true
+                        self.error = error
                     }
                 } receiveValue: { _ in}
                 .store(in: &cancellables)
@@ -84,15 +93,29 @@ final class LoginSignupViewModel: ObservableObject{
                 .sink { [weak self] completion in
                     guard let self = self else {return}
                     switch completion{
-                        
                     case .finished:
-                        self.isPushed = false
+                        self.storeUser()
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        self.showAlert = true
+                        self.error = error
                     }
                 } receiveValue: { _ in}
                 .store(in: &cancellables)
         }
+    }
+    
+    func storeUser(){
+        userService.storeUser(userName: userName)
+            .sink { completion in
+                switch completion{
+                case .finished:
+                    self.isPushed = false
+                case .failure(let error):
+                    self.showAlert = true
+                    self.error = error
+                }
+            } receiveValue: { _ in}
+            .store(in: &cancellables)
     }
 }
 
@@ -115,5 +138,9 @@ extension LoginSignupViewModel{
     
     private func isValidPass(_ pass: String) -> Bool{
         return pass.count >= 6
+    }
+    
+    private func isValidName(_ name: String) -> Bool{
+        !name.isEmpty
     }
 }

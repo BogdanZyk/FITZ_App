@@ -14,15 +14,11 @@ struct SettingsView: View {
             settingRowView(settingVM.settingItem[index])
         }
         .navigationTitle("Settings")
-        .background{
-            NavigationLink(isActive: $settingVM.loginSingupPushed) {
-                LoginSignupView(mode: .signup, isPushed: $settingVM.loginSingupPushed)
-            } label: {
-                EmptyView()
-            }
-        }
         .onAppear{
             settingVM.onAppear()
+        }
+        .fullScreenCover(isPresented: $settingVM.loginSingupPushed, onDismiss: settingVM.onAppear) {
+            LoginSignupView(mode: .signup, isPushed: $settingVM.loginSingupPushed)
         }
     }
 }
