@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ChallengeListView: View {
-    @StateObject private var challengeVM = ChallengeListViewModel()
-    @State private var showCreateModal: Bool = false
+    @EnvironmentObject var challengeVM: ChallengeListViewModel
     let columns: [GridItem] = Array.init(repeating: GridItem(.flexible(), spacing: 10), count: 2)
     var body: some View {
         ZStack{
@@ -24,21 +23,8 @@ struct ChallengeListView: View {
                     }
             }
         }
-        .sync($challengeVM.showCreateModal, with: $showCreateModal)
-        .toolbar{
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    challengeVM.send(.create)
-                } label: {
-                    Image(systemName: "plus.circle").imageScale(.large)
-                }
-            }
-        }
         .navigationBarTitleDisplayMode(.large)
         .navigationTitle("Challenges")
-        .sheet(isPresented: $showCreateModal) {
-            CreateChallengeModalView()
-        }
     }
 }
 
@@ -47,6 +33,7 @@ struct ChallengeListView_Previews: PreviewProvider {
     static var previews: some View {
         ChallengeListView()
             .preferredColorScheme(.dark)
+            .environmentObject(ChallengeListViewModel())
     }
 }
 

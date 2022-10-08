@@ -14,7 +14,6 @@ struct TabItem: Hashable{
     let type: TabItemType
     
     enum TabItemType{
-        case log
         case challengeList
         case settings
     }

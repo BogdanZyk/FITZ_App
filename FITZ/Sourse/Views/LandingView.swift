@@ -41,9 +41,14 @@ struct LandingView_Previews: PreviewProvider {
 extension LandingView{
     
     private var welcomeTitle: some View{
-        Text("Welcome to FitzApp")
-            .font(.system(size: 35, weight: .medium))
-            .foregroundColor(.white)
+        VStack(spacing: 20) {
+            Text("Welcome to FitzApp")
+                .font(.system(size: 35, weight: .medium))
+            Text("Create a sports challenge and complete it!")
+                .font(.system(size: 25, weight: .medium))
+                .multilineTextAlignment(.center)
+        }
+        .foregroundColor(.white)
     }
     
     private func bgImage(_ proxy: GeometryProxy) -> some View{

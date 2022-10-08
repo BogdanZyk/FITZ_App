@@ -11,9 +11,8 @@ final class TabContainerViewModel: ObservableObject{
     
     let tabItem = [
     
-        TabItem(imageName: "book", title: "Activity log", type: .log),
         TabItem(imageName: "list.bullet", title: "Challenges", type: .challengeList),
-        TabItem(imageName: "gear", title: "Settings", type: .settings)
+        TabItem(imageName: "person.fill", title: "Settings", type: .settings)
     
     ]
     
