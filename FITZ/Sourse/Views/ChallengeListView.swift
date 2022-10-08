@@ -10,7 +10,7 @@ import SwiftUI
 struct ChallengeListView: View {
     @StateObject private var challengeVM = ChallengeListViewModel()
     @State private var showCreateModal: Bool = false
-    let columns: [GridItem] = Array.init(repeating: GridItem(.flexible(), spacing: 20), count: 2)
+    let columns: [GridItem] = Array.init(repeating: GridItem(.flexible(), spacing: 10), count: 2)
     var body: some View {
         ZStack{
             if challengeVM.isLoading{
@@ -19,6 +19,9 @@ struct ChallengeListView: View {
                 errorView(error)
             }else{
                 mainContentView
+                    .onReceive(NotificationCenter.default.publisher(for: UIApplication.significantTimeChangeNotification)) { _ in
+                        
+                    }
             }
         }
         .sync($challengeVM.showCreateModal, with: $showCreateModal)

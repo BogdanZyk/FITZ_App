@@ -10,30 +10,44 @@ import Foundation
 struct ChallengeItemModel: Identifiable{
     
     private let challenge: Challenge
+    private let onDelete: (String) -> Void
+    private let onToggleComplete: (String, [Activity]) -> Void
+    
+    let todayTitle = "Today"
+    
     
     var id: String{
         challenge.id!
     }
     
     
-    init(_ challenge: Challenge, onDelete: @escaping (String) -> Void){
+    init(_ challenge: Challenge,
+         onDelete: @escaping (String) -> Void,
+         onToggleComplete: @escaping (String, [Activity]) -> Void)
+    {
+        
         self.challenge = challenge
         self.onDelete = onDelete
+        self.onToggleComplete =  onToggleComplete
     }
     
     var title: String{
         challenge.exercise.capitalized
     }
     
-    private var isComplete: Bool{
+    var isComplete: Bool{
         daysFromStart - challenge.lenght >= 0
+    }
+    
+    var challengeLenght: Int{
+        challenge.lenght
     }
     
     var progressCircleModel: ProgressCircleModel{
         let dayNumber = daysFromStart + 1
         let title = "Day"
-        let message = isComplete ? "Done" : "\(dayNumber) of \(challenge.lenght)"
-        let persentageComplete = Double(dayNumber) / Double(challenge.lenght)
+        let message = isComplete ? "Done" : "\(dayNumber) of \(challengeLenght)"
+        let persentageComplete = Double(dayNumber) / Double(challengeLenght)
         return ProgressCircleModel(title: title, message: message, persentageComplete: persentageComplete)
     }
     
@@ -44,22 +58,65 @@ struct ChallengeItemModel: Identifiable{
         return abs(daysFromStart)
     }
     
-    var statusText: String{
-        guard !isComplete else { return "Done" }
-        let dayNumber = daysFromStart + 1
-        return "Day \(dayNumber) of \(challenge.lenght)"
-    }
     
     var dayilyIncreaseText: String{
         "+\(challenge.increase) daily"
     }
     
-    private let onDelete: (String) -> Void
-    
-    func tappedDelete(){
-        if let id = challenge.id{
+
+
+    func send(_ action: Action){
+        guard let id = challenge.id else {return}
+        switch action{
+        case .delete:
             onDelete(id)
+        case .toggleComplete:
+            let today = Calendar.current.startOfDay(for: Date())
+            let activities = challenge.activities.map { activity -> Activity in
+                if today == activity.date{
+                    return .init(date: today, isComplete: !activity.isComplete)
+                }else{
+                    return activity
+                }
+            }
+            onToggleComplete(id, activities)
         }
     }
+
     
+}
+
+
+extension ChallengeItemModel{
+    
+    var shouldShowTodayView: Bool{
+        !isComplete
+    }
+        
+    var toadyRepTitle: String{
+        let repNumber = challenge.startAmount + (daysFromStart * challenge.increase)
+        let exercise: String
+        if repNumber == 1{
+            var chllangeExercise = challenge.exercise
+            chllangeExercise.removeLast()
+            exercise = chllangeExercise
+        }else{
+            exercise = challenge.exercise
+        }
+        return "\(repNumber) " + exercise
+    }
+}
+
+
+extension ChallengeItemModel{
+    
+    var isDayComplete: Bool{
+        let today = Calendar.current.startOfDay(for: Date())
+        return challenge.activities.first(where: {$0.date == today})?.isComplete == true
+    }
+    
+    enum Action{
+        case delete
+        case toggleComplete
+    }
 }

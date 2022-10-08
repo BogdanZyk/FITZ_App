@@ -12,11 +12,14 @@ import FirebaseFirestoreSwift
 protocol ChallengeServiceProtocol{
     func create(_ challenge: Challenge) -> AnyPublisher<Void, FitzError>
     func delete(_ challengeId: String) -> AnyPublisher<Void, FitzError>
+    func updateChallenge(_ challengeId: String, activities: [Activity]) -> AnyPublisher<Void, FitzError>
     func observedChallenge(userId: UserId) -> AnyPublisher<[Challenge], FitzError>
 }
 
 
 final class ChallengeService: ChallengeServiceProtocol{
+   
+    
   
     
 
@@ -41,6 +44,24 @@ final class ChallengeService: ChallengeServiceProtocol{
     func delete(_ challengeId: String) -> AnyPublisher<Void, FitzError> {
         return Future<Void, FitzError>{ promise in
             self.db.collection(FBConstants.challenges).document(challengeId).delete{ error in
+                if let error = error{
+                    promise(.failure(.default(description: error.localizedDescription)))
+                }else{
+                    promise(.success(()))
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
+    
+    func updateChallenge(_ challengeId: String, activities: [Activity]) -> AnyPublisher<Void, FitzError> {
+        return Future<Void, FitzError>{ promise in
+            self.db.collection(FBConstants.challenges).document(challengeId).updateData(
+                ["activities" : activities.map{
+                    return ["date": $0.date, "isComplete": $0.isComplete]
+                }
+                ]){ error in
+                    
                 if let error = error{
                     promise(.failure(.default(description: error.localizedDescription)))
                 }else{

@@ -26,10 +26,7 @@ final class ChallengeListViewModel: ObservableObject{
         observedChallenges()
     }
     
-    enum Action{
-        case retry
-        case create
-    }
+
     
     func send(_ action: Action){
         switch action {
@@ -37,6 +34,9 @@ final class ChallengeListViewModel: ObservableObject{
             observedChallenges()
         case .create:
             showCreateModal.toggle()
+        case .timeChange:
+            cancellables.removeAll()
+            observedChallenges()
         }
     }
     
@@ -59,10 +59,16 @@ final class ChallengeListViewModel: ObservableObject{
                 guard let self = self else {return}
                 self.isLoading = false
                 self.error = nil
-                self.itemModels = challenges.map{
-                    .init($0) {[weak self] id in
-                        guard let self = self else {return}
-                        self.deleteChallenge(id)
+                withAnimation {
+                    self.itemModels = challenges.map{ challenge in
+                        .init(challenge,
+                         onDelete: {[weak self] id in
+                            guard let self = self else {return}
+                            self.deleteChallenge(id)
+                        }) {[weak self] (id, activites)  in
+                            guard let self = self else {return}
+                            self.updateChallange(id, activites)
+                        }
                     }
                 }
                 self.showCreateModal = false
@@ -81,9 +87,33 @@ final class ChallengeListViewModel: ObservableObject{
                 self.error = error
             }
         } receiveValue: { _ in
-            
+            return
         }
         .store(in: &cancellables)
-
     }
+    
+    private func updateChallange(_ id: String, _ activites: [Activity]){
+        challengeService.updateChallenge(id, activities: activites)
+            .sink { completion in
+                switch completion{
+                case .finished: break
+                case .failure(let error):
+                    self.error = error
+                }
+            } receiveValue: { _ in
+                return
+            }
+            .store(in: &cancellables)
+    }
+}
+
+
+extension ChallengeListViewModel{
+    
+    enum Action{
+        case retry
+        case create
+        case timeChange
+    }
+    
 }

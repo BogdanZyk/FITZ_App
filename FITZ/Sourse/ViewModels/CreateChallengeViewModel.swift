@@ -71,13 +71,23 @@ final class CreateChallengeViewModel: ObservableObject{
               let lenght = lengthDropdowns.number else {
             return Fail(error: .default()).eraseToAnyPublisher()
         }
+        let startDate = Calendar.current.startOfDay(for: Date())
+        
         let challenge = Challenge(
             exercise: exercise,
             startAmount: startAmount,
             increase: increase,
             lenght: lenght,
             userId: userId,
-            startDate: Date())
+            startDate: startDate,
+            activities: (0..<lenght).compactMap({ dayNumber in
+                if let dateForDayNumber = Calendar.current.date(byAdding: .day, value: dayNumber, to: startDate){
+                    return .init(date: dateForDayNumber, isComplete: false)
+                }else{
+                    return nil
+                }
+            })
+        )
         return challengeService.create(challenge).eraseToAnyPublisher()
     }
     
