@@ -19,7 +19,7 @@ struct LandingView: View {
                 
                     actionButton
                     alreadyButton
-                    NavigationLink(isActive: $landingVM.loginSingupPushed, destination:{ LoginSignupView(viewModel: LoginSignupViewModel(mode: .login, isPushed: $landingVM.loginSingupPushed)) }){}
+                    NavigationLink(isActive: $landingVM.loginSingupPushed, destination:{ LoginSignupView(mode: .login, isPushed: $landingVM.loginSingupPushed) }){}
                     
                     NavigationLink(isActive: $landingVM.createPushed, destination: { CreateView() }){}
                 }

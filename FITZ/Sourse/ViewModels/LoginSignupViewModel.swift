@@ -5,7 +5,7 @@
 //  Created by Bogdan Zykov on 18.09.2022.
 //
 
-import SwiftUI
+import Foundation
 import Combine
 
 
@@ -16,18 +16,16 @@ final class LoginSignupViewModel: ObservableObject{
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var isValid: Bool = false
-    @Binding var isPushed: Bool
+    @Published var isPushed: Bool = true
     private let userService: UserServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
     
     init(mode: Mode,
-         userService: UserServiceProtocol = UserService(),
-         isPushed: Binding<Bool>
+         userService: UserServiceProtocol = UserService()
     ){
         self.mode = mode
         self.userService = userService
-        self._isPushed = isPushed
         
         Publishers.CombineLatest($email, $password)
             .debounce(for: .seconds(0.2), scheduler: DispatchQueue.main)

@@ -16,7 +16,7 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .background{
             NavigationLink(isActive: $settingVM.loginSingupPushed) {
-                LoginSignupView(viewModel: LoginSignupViewModel(mode: .signup, isPushed: $settingVM.loginSingupPushed))
+                LoginSignupView(mode: .signup, isPushed: $settingVM.loginSingupPushed)
             } label: {
                 EmptyView()
             }

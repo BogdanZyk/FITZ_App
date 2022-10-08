@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct LoginSignupView: View {
-    @ObservedObject var viewModel: LoginSignupViewModel
+    @StateObject private var viewModel: LoginSignupViewModel
+    @Binding var isPushed: Bool
+    init(mode: LoginSignupViewModel.Mode, isPushed: Binding<Bool>) {
+        self._isPushed = isPushed
+        self._viewModel = .init(wrappedValue: .init(mode: mode))
+    }
+    
     var body: some View {
         VStack(spacing: 15){
            
@@ -22,13 +28,16 @@ struct LoginSignupView: View {
             Spacer()
         }
         .padding()
+        .onReceive(viewModel.$isPushed) { isPushed in
+            self.isPushed = isPushed
+        }
     }
 }
 
 struct LoginSignupView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            LoginSignupView(viewModel: LoginSignupViewModel(mode: .login, isPushed: .constant(true)))
+            LoginSignupView(mode: .login, isPushed: .constant(true))
         }
     }
 }
