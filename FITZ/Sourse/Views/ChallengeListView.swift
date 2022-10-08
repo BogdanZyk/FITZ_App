@@ -51,7 +51,7 @@ extension ChallengeListView{
     private var mainContentView: some View{
         ScrollView{
             LazyVGrid(columns: columns) {
-                ForEach(challengeVM.itemModels, id: \.self){item in
+                ForEach(challengeVM.itemModels, id: \.id){item in
                     ChallengeItemView(challengeItem: item)
                 }
             }

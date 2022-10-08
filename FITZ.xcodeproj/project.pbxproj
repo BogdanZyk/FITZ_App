@@ -52,6 +52,7 @@
 		5A6BF2B828D69E8C002E21E7 /* TextFieldRoundedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2B728D69E8C002E21E7 /* TextFieldRoundedStyle.swift */; };
 		5A6C7A8328EE0CE70008E310 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8228EE0CE70008E310 /* ProgressCircleView.swift */; };
 		5A6C7A8528EE0D2F0008E310 /* ProgressCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8428EE0D2F0008E310 /* ProgressCircleModel.swift */; };
+		5A6C7A8728EE26B90008E310 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8628EE26B80008E310 /* testView.swift */; };
 		5A72871928D2745100DFC01A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72871828D2745100DFC01A /* UserService.swift */; };
 		5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,7 @@
 		5A6BF2B728D69E8C002E21E7 /* TextFieldRoundedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRoundedStyle.swift; sourceTree = "<group>"; };
 		5A6C7A8228EE0CE70008E310 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		5A6C7A8428EE0D2F0008E310 /* ProgressCircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleModel.swift; sourceTree = "<group>"; };
+		5A6C7A8628EE26B80008E310 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		5A72871828D2745100DFC01A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 				5A6BF2A728D68B83002E21E7 /* SettingsView.swift */,
 				5A6BF2AE28D69220002E21E7 /* CreateChallengeModalView.swift */,
 				5A6BF2B328D698E4002E21E7 /* LoginSignupView.swift */,
+				5A6C7A8628EE26B80008E310 /* testView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				5A04685A28D13C980040C122 /* DropdownOptionProtocol.swift in Sources */,
 				5A04684E28D131490040C122 /* CreateView.swift in Sources */,
 				5A6BF2AF28D69220002E21E7 /* CreateChallengeModalView.swift in Sources */,
+				5A6C7A8728EE26B90008E310 /* testView.swift in Sources */,
 				5A6BF2A628D50C0D002E21E7 /* ChallengeItemView.swift in Sources */,
 				5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */,
 				5A6BF2B628D6992B002E21E7 /* LoginSignupViewModel.swift in Sources */,

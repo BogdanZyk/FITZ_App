@@ -31,7 +31,7 @@ struct ChallengeItemView: View {
 
 struct ChallengeItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ChallengeItemView(challengeItem: ChallengeItemModel(Challenge(exercise: "situps", startAmount: 4, increase: 4, lenght: 21, userId: "", startDate: Date())))
+        ChallengeItemView(challengeItem: ChallengeItemModel(Challenge(exercise: "situps", startAmount: 4, increase: 4, lenght: 21, userId: "", startDate: Date()), onDelete: { _ in}))
             .preferredColorScheme(.dark)
     }
 }
@@ -44,7 +44,7 @@ extension ChallengeItemView{
             Spacer()
             
             Button {
-                
+                challengeItem.tappedDelete()
             } label: {
                 Image(systemName: "trash")
             }
@@ -54,7 +54,7 @@ extension ChallengeItemView{
     private var daylyIncreaseRow: some View{
         HStack {
             Text(challengeItem.dayilyIncreaseText)
-                .font(.caption.weight(.semibold))
+                .font(.subheadline.weight(.semibold))
             Spacer()
         }
     }

@@ -11,11 +11,14 @@ import FirebaseFirestoreSwift
 
 protocol ChallengeServiceProtocol{
     func create(_ challenge: Challenge) -> AnyPublisher<Void, FitzError>
+    func delete(_ challengeId: String) -> AnyPublisher<Void, FitzError>
     func observedChallenge(userId: UserId) -> AnyPublisher<[Challenge], FitzError>
 }
 
 
 final class ChallengeService: ChallengeServiceProtocol{
+  
+    
 
     private let db = Firestore.firestore()
     
@@ -35,8 +38,21 @@ final class ChallengeService: ChallengeServiceProtocol{
         }.eraseToAnyPublisher()
     }
     
+    func delete(_ challengeId: String) -> AnyPublisher<Void, FitzError> {
+        return Future<Void, FitzError>{ promise in
+            self.db.collection(FBConstants.challenges).document(challengeId).delete{ error in
+                if let error = error{
+                    promise(.failure(.default(description: error.localizedDescription)))
+                }else{
+                    promise(.success(()))
+                }
+            }
+        }.eraseToAnyPublisher()
+    }
+    
     func observedChallenge(userId: UserId) -> AnyPublisher<[Challenge], FitzError> {
-        let query = db.collection(FBConstants.challenges).whereField("userId", isEqualTo: userId)
+        let query = db.collection(FBConstants.challenges)
+            .whereField("userId", isEqualTo: userId).order(by: "startDate", descending: true)
         return Publishers.QuerySnapshotPublisher(query: query)
             .flatMap{ snapshot -> AnyPublisher<[Challenge], FitzError> in
                 do{

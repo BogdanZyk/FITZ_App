@@ -7,13 +7,18 @@
 
 import Foundation
 
-struct ChallengeItemModel: Hashable{
+struct ChallengeItemModel: Identifiable{
     
-   private let challenge: Challenge
+    private let challenge: Challenge
+    
+    var id: String{
+        challenge.id!
+    }
     
     
-    init(_ challenge: Challenge){
+    init(_ challenge: Challenge, onDelete: @escaping (String) -> Void){
         self.challenge = challenge
+        self.onDelete = onDelete
     }
     
     var title: String{
@@ -49,5 +54,12 @@ struct ChallengeItemModel: Hashable{
         "+\(challenge.increase) daily"
     }
     
+    private let onDelete: (String) -> Void
+    
+    func tappedDelete(){
+        if let id = challenge.id{
+            onDelete(id)
+        }
+    }
     
 }
