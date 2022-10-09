@@ -22,21 +22,26 @@ final class CreateChallengeViewModel: ObservableObject{
     ){
         self.userServise = userServise
         self.challengeService = challengeService
+        let isPremium = userServise.isPremium
+        self.exerciseDropdowns = ChallengePartModel(type: .exercise, isPremium: isPremium)
+        self.startDropdowns = ChallengePartModel(type: .start, isPremium: isPremium)
+        self.increaseDropdowns = ChallengePartModel(type: .increase, isPremium: isPremium)
+        self.lengthDropdowns = ChallengePartModel(type: .length, isPremium: isPremium)
     }
     
-    @Published var exerciseDropdowns = ChallengePartModel(type: .exercise)
-    @Published var startDropdowns = ChallengePartModel(type: .start)
-    @Published var increaseDropdowns = ChallengePartModel(type: .increase)
-    @Published var lengthDropdowns = ChallengePartModel(type: .length)
-    
+    @Published var exerciseDropdowns: ChallengePartModel
+    @Published var startDropdowns: ChallengePartModel
+    @Published var increaseDropdowns: ChallengePartModel
+    @Published var lengthDropdowns: ChallengePartModel
+    @Published var customExerciseText = ""
     
     @Published var error: FitzError?
     @Published var isLoading: Bool = false
     
     enum Action{
-        case createChallenge
+        case createChallenge, setCustomExercise
     }
-    
+
 
     
     func send(_ action: Action){
@@ -61,6 +66,10 @@ final class CreateChallengeViewModel: ObservableObject{
                 print("success")
             }
             .store(in: &cancellables)
+        case .setCustomExercise:
+            if !customExerciseText.isEmpty{
+                exerciseDropdowns.setCustomExerciseOption(customExerciseText)
+            }
         }
     }
     

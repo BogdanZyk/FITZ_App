@@ -23,15 +23,15 @@ struct DropdownView<T: DropdownItemProtocol>: View {
                     Text(dropdown.dropdownTitle)
                         .font(.system(size: 25, weight: .semibold))
                     Spacer()
-                    Image(systemName: "arrowtriangle.down.circle")
-                        .font(.system(size: 22, weight: .medium))
+                    Image(systemName: "arrowtriangle.down.fill")
+                        .font(.system(size: 16, weight: .regular))
                 }
             }
             .buttonStyle(PrimaryButtonStyle(fillColor: .primaryButton))
             
         }
         .padding()
-        .confirmationDialog("Select", isPresented: $dropdown.isSelected) {
+        .confirmationDialog("Select \(dropdown.headerTitle)", isPresented: $dropdown.isSelected, titleVisibility: .visible) {
             confirmButtons
         }
     }

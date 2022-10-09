@@ -13,6 +13,7 @@ struct CreateChallengeModalView: View {
         NavigationView{
             CreateView()
         }
+        .accentColor(.primary)
         .preferredColorScheme(isDarkMode ? .dark : .light)
     }
 }

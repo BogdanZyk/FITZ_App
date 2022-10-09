@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DropdownOptionProtocol{
-    var toDropdownOption: DropdownOption { get }
+    func toDropdownOption(_ isPremium: Bool) -> DropdownOption?
 }

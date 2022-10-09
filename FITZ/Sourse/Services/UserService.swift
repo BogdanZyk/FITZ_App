@@ -10,6 +10,9 @@ import FirebaseFirestore
 import FirebaseAuth
 
 protocol UserServiceProtocol{
+    
+    var isPremium: Bool {get}
+    
     var currentUser: User? { get }
     
     func currentUserPublished() -> AnyPublisher<User?, Never>
@@ -24,6 +27,10 @@ protocol UserServiceProtocol{
 
 
 final class UserService: UserServiceProtocol{
+    
+    
+    var isPremium: Bool = true
+    
   
     
 

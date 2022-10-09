@@ -24,22 +24,28 @@ struct ChallengePartModel: DropdownItemProtocol{
     
     private let type: ChallengePartType
     
-    init(type: ChallengePartType){
+    init(type: ChallengePartType, isPremium: Bool = false){
         
         
         switch type {
         case .exercise:
-            self.options = ExerciseOption.allCases.map({$0.toDropdownOption})
+        self.options = ExerciseOption.allCases.compactMap({$0.toDropdownOption(isPremium)})
         case .start:
-            self.options = StartOption.allCases.map({$0.toDropdownOption})
+            self.options = StartOption.allCases.compactMap({$0.toDropdownOption(isPremium)})
         case .increase:
-            self.options = IncreaseOption.allCases.map({$0.toDropdownOption})
+            self.options = IncreaseOption.allCases.compactMap({$0.toDropdownOption(isPremium)})
         case .length:
-            self.options = LenghtOption.allCases.map({$0.toDropdownOption})
+            self.options = LenghtOption.allCases.compactMap({$0.toDropdownOption(isPremium)})
         }
         
         self.type = type
         self.selectedOption = options.first!
+    }
+    
+    mutating func setCustomExerciseOption(_ text: String){
+        let customOption: DropdownOption = .init(type: .text(text), formatted: text.capitalized)
+        self.options.append(customOption)
+        self.selectedOption = customOption
     }
     
     enum ChallengePartType: String, CaseIterable{
@@ -48,36 +54,78 @@ struct ChallengePartModel: DropdownItemProtocol{
         case increase = "Daily Increase"
         case length = "Challenge Lenght"
     }
-    enum ExerciseOption: String, CaseIterable, DropdownOptionProtocol{
+    
+    enum ExerciseOption: String, CaseIterable{
         case pullups
         case pushups
         case situps
+        case pressups
+        case dips
         
-        var toDropdownOption: DropdownOption {
-            .init(type: .text(rawValue), formatted: rawValue.capitalized)
+        func toDropdownOption(_ isPremium: Bool) -> DropdownOption? {
+
+            if isPremium{
+               return .init(type: .text(rawValue), formatted: rawValue.capitalized)
+            }else{
+                switch self{
+                case .pullups, .pushups, .situps:
+                    return .init(type: .text(rawValue), formatted: rawValue.capitalized)
+                default:
+                    return nil
+                }
+            }
         }
     }
     
     enum StartOption: Int, CaseIterable, DropdownOptionProtocol{
-        case one = 1, two, three, four, five
         
-        var toDropdownOption: DropdownOption {
-            .init(type: .number(rawValue), formatted: "\(rawValue)")
+        case one = 1, two, three, four, five, six, seven, eight, nine, ten
+        
+        func toDropdownOption(_ isPremium: Bool) -> DropdownOption? {
+            if isPremium{
+               return .init(type: .number(rawValue), formatted: "\(rawValue)")
+            }else{
+                switch self{
+                case .one, .two, .three, .four, .five:
+                    return .init(type: .number(rawValue), formatted: "\(rawValue)")
+                default:
+                    return nil
+                }
+            }
         }
     }
     
     enum IncreaseOption: Int, CaseIterable, DropdownOptionProtocol{
-        case one = 1, two, three, four, five
+        case one = 1, two, three, four, five, six, seven, eight, nine, ten
         
-        var toDropdownOption: DropdownOption {
-            .init(type: .number(rawValue), formatted: "+\(rawValue)")
+        func toDropdownOption(_ isPremium: Bool) -> DropdownOption? {
+            if isPremium{
+               return .init(type: .number(rawValue), formatted: "\(rawValue)")
+            }else{
+                switch self{
+                case .one, .two, .three, .four, .five:
+                    return .init(type: .number(rawValue), formatted: "\(rawValue)")
+                default:
+                    return nil
+                }
+            }
         }
     }
+    
     enum LenghtOption: Int, CaseIterable, DropdownOptionProtocol{
-        case saven = 7, fourteen = 14, twentyOne = 21, twentyEight = 28
+        case saven = 7, fourteen = 14, twentyOne = 21, twentyEight = 28, thirtyFive = 35, fortyTwo = 42
         
-        var toDropdownOption: DropdownOption {
-            .init(type: .number(rawValue), formatted: "\(rawValue) days")
+        func toDropdownOption(_ isPremium: Bool) -> DropdownOption? {
+            if isPremium{
+               return .init(type: .number(rawValue), formatted: "\(rawValue)")
+            }else{
+                switch self{
+                case .saven, .fourteen:
+                    return .init(type: .number(rawValue), formatted: "\(rawValue)")
+                default:
+                    return nil
+                }
+            }
         }
     }
     

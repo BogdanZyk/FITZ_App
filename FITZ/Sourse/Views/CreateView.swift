@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CreateView: View {
+    @State private var showTfExercise: Bool = false
     @StateObject private var viewModel = CreateChallengeViewModel()
     var body: some View {
         ZStack{
@@ -22,14 +23,21 @@ struct CreateView: View {
         }, message: {
             Text(viewModel.error?.localizedDescription ?? "")
         })
-        .navigationTitle("Create")
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing) {
+               toolbarBtn
+            }
+        }
+        .navigationTitle("Create challenge")
         .navigationBarBackButtonHidden(true)
     }
 }
 
 struct CreateView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateView()
+        NavigationView {
+            CreateView()
+        }
     }
 }
 
@@ -38,11 +46,6 @@ extension CreateView{
         ScrollView {
             VStack(spacing: 10){
                 dropDownList
-//                NavigationLink(isActive: $showRemindView) {
-//                    RemindView()
-//                } label: {
-//
-//                }
                 nexButton
             }
         }
@@ -54,6 +57,9 @@ extension CreateView{
     private var dropDownList: some View{
         Group{
             DropdownView(dropdown: $viewModel.exerciseDropdowns)
+            if showTfExercise{
+                exerciseTextField
+            }
             DropdownView(dropdown: $viewModel.startDropdowns)
             DropdownView(dropdown: $viewModel.increaseDropdowns)
             DropdownView(dropdown: $viewModel.lengthDropdowns)
@@ -66,10 +72,34 @@ extension CreateView{
             viewModel.send(.createChallenge)
         } label: {
             Text("Create")
-                .font(.system(size: 24, weight: .medium))
+                .font(.system(size: 20, weight: .medium))
                 .foregroundColor(.primary)
+                .hCenter()
         }
+        .buttonStyle(PrimaryButtonStyle())
+        .padding(.horizontal)
     }
     
+    private var exerciseTextField: some View{
+        TextField("Exercise", text: $viewModel.customExerciseText)
+            .modifier(TextFieldCustomRoundedStyle())
+            .textInputAutocapitalization(.never)
+            .padding(.horizontal)
+    }
+    
+    private var toolbarBtn: some View{
+        
+        Button(showTfExercise ? "Save" : "Custom exercise") {
+            
+            if showTfExercise{
+                viewModel.send(.setCustomExercise)
+            }
+            
+            withAnimation {
+                showTfExercise.toggle()
+            }
+        }
+        .animation(nil, value: UUID())
+    }
 
 }
