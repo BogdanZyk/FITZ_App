@@ -10,16 +10,18 @@ import SwiftUI
 @main
 struct FITZApp: App {
     @AppStorage("isDarkMode") private var isDarkMode = false
-    @StateObject private var apppState = AppState()
+    @StateObject private var appState = AppState()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            if apppState.isLoggedIn{
-                TabContainerView()
-                    .preferredColorScheme(isDarkMode ? .dark : .light)
-            }else{
-                LandingView()
+            Group{
+                if appState.isLoggedIn{
+                    TabContainerView()
+                }else{
+                    LandingView()
+                }
             }
+            .preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }

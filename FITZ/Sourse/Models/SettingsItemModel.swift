@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension SettingsViewModel{
+extension ProfileViewModel{
     
     struct SettingsItemModel {
         let title: String
@@ -19,10 +19,10 @@ extension SettingsViewModel{
     }
 
     enum SettingsItemType{
-        case account
         case mode
         case privacy
         case logout
+        case about
     }
     
 }

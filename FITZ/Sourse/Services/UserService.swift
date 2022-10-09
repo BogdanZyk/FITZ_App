@@ -20,6 +20,7 @@ protocol UserServiceProtocol{
     func observedAuthChanges() -> AnyPublisher<User?, Never>
     func linkAccount(email: String, pass: String) -> AnyPublisher<Void, FitzError>
     func storeUser(userName: String) -> AnyPublisher<Void, FitzError>
+    func getCurrentUser() -> AnyPublisher<FitzUser, FitzError>
     func logout() -> AnyPublisher<Void, FitzError>
     func login(email: String, pass: String) -> AnyPublisher<Void, FitzError>
     
@@ -27,9 +28,11 @@ protocol UserServiceProtocol{
 
 
 final class UserService: UserServiceProtocol{
+
     
     
-    var isPremium: Bool = true
+    
+    var isPremium: Bool = false
     
   
     
@@ -116,6 +119,26 @@ final class UserService: UserServiceProtocol{
                 promise(.failure(.default(description: error.localizedDescription)))
             }
         }.eraseToAnyPublisher()
+    }
+    
+    func getCurrentUser() -> AnyPublisher<FitzUser, FitzError> {
+        guard let uid = self.currentUser?.uid else {
+            return Fail(error: FitzError.default()).eraseToAnyPublisher()
+        }
+        let query = db.collection("users").whereField("uid", isEqualTo: uid)
+        return Publishers.QuerySnapshotPublisher(query: query)
+            .flatMap{ snapshot -> AnyPublisher<FitzUser, FitzError> in
+                do{
+                    guard let user = try (snapshot.documents.compactMap{
+                        try $0.data(as: FitzUser.self)
+                    }).first else{
+                        return Fail(error: .default(description: "Error set user")).eraseToAnyPublisher()
+                    }
+                    return Just(user).setFailureType(to: FitzError.self).eraseToAnyPublisher()
+                }catch{
+                    return Fail(error: .default(description: "Parsing error")).eraseToAnyPublisher()
+                }
+            }.eraseToAnyPublisher()
     }
     
 }

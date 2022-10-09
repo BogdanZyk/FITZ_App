@@ -54,7 +54,7 @@ extension TabContainerView{
             .environmentObject(challengeVM)
         case .settings:
             NavigationView{
-                SettingsView()
+                ProfileView()
             }
         }
     }
