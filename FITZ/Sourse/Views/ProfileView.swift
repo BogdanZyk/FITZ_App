@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var challengeVM: ChallengeListViewModel
     @EnvironmentObject var storeVM: StoreViewModel
     @StateObject private var viewModel = ProfileViewModel()
     @State private var showPurchaseSubsView: Bool = false
@@ -41,6 +42,7 @@ struct ProfileView_Previews: PreviewProvider {
         NavigationView {
             ProfileView()
         }
+        .environmentObject(ChallengeListViewModel())
         .environmentObject(StoreViewModel())
     }
 }
@@ -77,11 +79,11 @@ extension ProfileView{
     private var challengeStats: some View{
         VStack(spacing: 20){
             HStack(alignment: .top){
-                statsRow("challenges\ncompleted", 10)
+                statsRow("challenges\ncompleted", challengeVM.countIsCompletedOrder)
                 Spacer()
-                statsRow("total\ndays", 50)
+                statsRow("execise\ncompleted", challengeVM.countExerciseCompleted)
                 Spacer()
-                statsRow("total\nexecise", 10)
+                statsRow("total\ndays", challengeVM.totalDays)
             }
             .padding(.horizontal)
         }

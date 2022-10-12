@@ -43,6 +43,10 @@ struct ChallengeItemModel: Identifiable{
         challenge.lenght
     }
     
+    var countExerciseCompleted: Int{
+        challenge.activities.filter({$0.isComplete}).count
+    }
+    
     var progressCircleModel: ProgressCircleModel{
         let dayNumber = daysFromStart + 1
         let title = "Day"

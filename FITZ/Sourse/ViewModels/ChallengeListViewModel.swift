@@ -26,6 +26,17 @@ final class ChallengeListViewModel: ObservableObject{
         observedChallenges()
     }
     
+    public var countIsCompletedOrder: Int{
+        itemModels.filter({$0.isComplete}).count
+    }
+    
+    public var totalDays: Int{
+        itemModels.compactMap({$0.challengeLenght}).reduce(0, +)
+    }
+    
+    public var countExerciseCompleted: Int{
+        itemModels.compactMap({$0.countExerciseCompleted}).reduce(0, +)
+    }
 
     
     func send(_ action: Action){

@@ -54,11 +54,13 @@ extension TabContainerView{
                 ChallengeListView()
             }
             .environmentObject(challengeVM)
+            
         case .settings:
             NavigationView{
                 ProfileView()
                     .environmentObject(storeVM)
             }
+            .environmentObject(challengeVM)
         }
     }
     
