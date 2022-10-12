@@ -32,6 +32,22 @@
 		5A08653428D2893100B44B00 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653328D2893100B44B00 /* ChallengeService.swift */; };
 		5A0E28D528F6BB15006DACB9 /* StoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E28D428F6BB15006DACB9 /* StoreViewModel.swift */; };
 		5A0E28D728F6C5DC006DACB9 /* StoreSubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E28D628F6C5DC006DACB9 /* StoreSubscriptionModel.swift */; };
+		5A0E290F28F70C48006DACB9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0E28DE28F70966006DACB9 /* WidgetKit.framework */; };
+		5A0E291028F70C48006DACB9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0E28E028F70966006DACB9 /* SwiftUI.framework */; };
+		5A0E291328F70C48006DACB9 /* FitzWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E291228F70C48006DACB9 /* FitzWidgets.swift */; };
+		5A0E291528F70C49006DACB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A0E291428F70C49006DACB9 /* Assets.xcassets */; };
+		5A0E291928F70C49006DACB9 /* FitzWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5A0E290E28F70C48006DACB9 /* FitzWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5A0E291E28F70D43006DACB9 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08653128D2884800B44B00 /* Challenge.swift */; };
+		5A0E291F28F70D90006DACB9 /* ProgressCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8428EE0D2F0008E310 /* ProgressCircleModel.swift */; };
+		5A0E292128F70E05006DACB9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0E292028F70E05006DACB9 /* FirebaseFirestoreSwift */; };
+		5A0E292328F70F40006DACB9 /* ChallengeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E292228F70F40006DACB9 /* ChallengeEntry.swift */; };
+		5A0E292428F710FC006DACB9 /* ChallengeItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2A328D503BE002E21E7 /* ChallengeItemModel.swift */; };
+		5A0E292528F712F4006DACB9 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8228EE0CE70008E310 /* ProgressCircleView.swift */; };
+		5A0E292628F71362006DACB9 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04683E28D1295B0040C122 /* Color.swift */; };
+		5A0E292728F7136F006DACB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A04682B28D1268A0040C122 /* Assets.xcassets */; };
+		5A0E292828F714CE006DACB9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04683C28D1295B0040C122 /* View.swift */; };
+		5A0E292A28F71707006DACB9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E292928F71707006DACB9 /* Provider.swift */; };
+		5A0E292C28F7189E006DACB9 /* FitzWidgetsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E292B28F7189E006DACB9 /* FitzWidgetsEntryView.swift */; };
 		5A1EA71A28F237B100BE36C9 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */; };
 		5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28B28D290EF002E21E7 /* FitzError.swift */; };
 		5A6BF28F28D4DAFE002E21E7 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */; };
@@ -62,6 +78,30 @@
 		5AD4BC9328F6AD8100E1721E /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4BC9228F6AD8100E1721E /* Double.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A0E291728F70C49006DACB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A04681C28D126870040C122 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A0E290D28F70C48006DACB9;
+			remoteInfo = FitzWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5A0E28F128F70968006DACB9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A0E291928F70C49006DACB9 /* FitzWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5A04682428D126870040C122 /* FITZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FITZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A04682728D126870040C122 /* FITZApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FITZApp.swift; sourceTree = "<group>"; };
@@ -86,6 +126,15 @@
 		5A08653328D2893100B44B00 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		5A0E28D428F6BB15006DACB9 /* StoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewModel.swift; sourceTree = "<group>"; };
 		5A0E28D628F6C5DC006DACB9 /* StoreSubscriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSubscriptionModel.swift; sourceTree = "<group>"; };
+		5A0E28DE28F70966006DACB9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5A0E28E028F70966006DACB9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5A0E290E28F70C48006DACB9 /* FitzWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FitzWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A0E291228F70C48006DACB9 /* FitzWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzWidgets.swift; sourceTree = "<group>"; };
+		5A0E291428F70C49006DACB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A0E291628F70C49006DACB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A0E292228F70F40006DACB9 /* ChallengeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEntry.swift; sourceTree = "<group>"; };
+		5A0E292928F71707006DACB9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		5A0E292B28F7189E006DACB9 /* FitzWidgetsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzWidgetsEntryView.swift; sourceTree = "<group>"; };
 		5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		5A6BF28B28D290EF002E21E7 /* FitzError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzError.swift; sourceTree = "<group>"; };
 		5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
@@ -128,6 +177,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A0E290B28F70C48006DACB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0E291028F70C48006DACB9 /* SwiftUI.framework in Frameworks */,
+				5A0E290F28F70C48006DACB9 /* WidgetKit.framework in Frameworks */,
+				5A0E292128F70E05006DACB9 /* FirebaseFirestoreSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				5A04682628D126870040C122 /* FITZ */,
+				5A0E291128F70C48006DACB9 /* FitzWidgets */,
+				5A0E28DD28F70966006DACB9 /* Frameworks */,
 				5A04682528D126870040C122 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -143,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				5A04682428D126870040C122 /* FITZ.app */,
+				5A0E290E28F70C48006DACB9 /* FitzWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,6 +343,28 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		5A0E28DD28F70966006DACB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A0E28DE28F70966006DACB9 /* WidgetKit.framework */,
+				5A0E28E028F70966006DACB9 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A0E291128F70C48006DACB9 /* FitzWidgets */ = {
+			isa = PBXGroup;
+			children = (
+				5A0E291228F70C48006DACB9 /* FitzWidgets.swift */,
+				5A0E292228F70F40006DACB9 /* ChallengeEntry.swift */,
+				5A0E292928F71707006DACB9 /* Provider.swift */,
+				5A0E291428F70C49006DACB9 /* Assets.xcassets */,
+				5A0E291628F70C49006DACB9 /* Info.plist */,
+				5A0E292B28F7189E006DACB9 /* FitzWidgetsEntryView.swift */,
+			);
+			path = FitzWidgets;
+			sourceTree = "<group>";
+		};
 		5A6BF28D28D4DAE2002E21E7 /* Publishers */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,10 +411,12 @@
 				5A04682028D126870040C122 /* Sources */,
 				5A04682128D126870040C122 /* Frameworks */,
 				5A04682228D126870040C122 /* Resources */,
+				5A0E28F128F70968006DACB9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5A0E291828F70C49006DACB9 /* PBXTargetDependency */,
 			);
 			name = FITZ;
 			packageProductDependencies = (
@@ -341,6 +427,26 @@
 			productName = FITZ;
 			productReference = 5A04682428D126870040C122 /* FITZ.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5A0E290D28F70C48006DACB9 /* FitzWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A0E291A28F70C49006DACB9 /* Build configuration list for PBXNativeTarget "FitzWidgetsExtension" */;
+			buildPhases = (
+				5A0E290A28F70C48006DACB9 /* Sources */,
+				5A0E290B28F70C48006DACB9 /* Frameworks */,
+				5A0E290C28F70C48006DACB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FitzWidgetsExtension;
+			packageProductDependencies = (
+				5A0E292028F70E05006DACB9 /* FirebaseFirestoreSwift */,
+			);
+			productName = FitzWidgetsExtension;
+			productReference = 5A0E290E28F70C48006DACB9 /* FitzWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -354,6 +460,9 @@
 				TargetAttributes = {
 					5A04682328D126870040C122 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					5A0E290D28F70C48006DACB9 = {
+						CreatedOnToolsVersion = 14.0.1;
 					};
 				};
 			};
@@ -374,6 +483,7 @@
 			projectRoot = "";
 			targets = (
 				5A04682328D126870040C122 /* FITZ */,
+				5A0E290D28F70C48006DACB9 /* FitzWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -386,6 +496,15 @@
 				5A04682F28D1268A0040C122 /* Preview Assets.xcassets in Resources */,
 				5A04682C28D1268A0040C122 /* Assets.xcassets in Resources */,
 				5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A0E290C28F70C48006DACB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0E292728F7136F006DACB9 /* Assets.xcassets in Resources */,
+				5A0E291528F70C49006DACB9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +565,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A0E290A28F70C48006DACB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A0E292828F714CE006DACB9 /* View.swift in Sources */,
+				5A0E292428F710FC006DACB9 /* ChallengeItemModel.swift in Sources */,
+				5A0E292528F712F4006DACB9 /* ProgressCircleView.swift in Sources */,
+				5A0E292628F71362006DACB9 /* Color.swift in Sources */,
+				5A0E292A28F71707006DACB9 /* Provider.swift in Sources */,
+				5A0E292328F70F40006DACB9 /* ChallengeEntry.swift in Sources */,
+				5A0E292C28F7189E006DACB9 /* FitzWidgetsEntryView.swift in Sources */,
+				5A0E291F28F70D90006DACB9 /* ProgressCircleModel.swift in Sources */,
+				5A0E291E28F70D43006DACB9 /* Challenge.swift in Sources */,
+				5A0E291328F70C48006DACB9 /* FitzWidgets.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A0E291828F70C49006DACB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A0E290D28F70C48006DACB9 /* FitzWidgetsExtension */;
+			targetProxy = 5A0E291728F70C49006DACB9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5A04683028D1268A0040C122 /* Debug */ = {
@@ -566,6 +710,7 @@
 		5A04683328D1268A0040C122 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -595,6 +740,7 @@
 		5A04683428D1268A0040C122 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -621,6 +767,64 @@
 			};
 			name = Release;
 		};
+		5A0E291B28F70C49006DACB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92PU6D6MCQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FitzWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FitzWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BogdanZykov.FITZ.FitzWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A0E291C28F70C49006DACB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92PU6D6MCQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FitzWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FitzWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = BogdanZykov.FITZ.FitzWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -638,6 +842,15 @@
 			buildConfigurations = (
 				5A04683328D1268A0040C122 /* Debug */,
 				5A04683428D1268A0040C122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A0E291A28F70C49006DACB9 /* Build configuration list for PBXNativeTarget "FitzWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A0E291B28F70C49006DACB9 /* Debug */,
+				5A0E291C28F70C49006DACB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -667,6 +880,11 @@
 			productName = FirebaseFirestore;
 		};
 		5A08652C28D2791400B44B00 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A08652728D2791400B44B00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		5A0E292028F70E05006DACB9 /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5A08652728D2791400B44B00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;

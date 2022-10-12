@@ -7,23 +7,27 @@
 
 import Foundation
 
+typealias OnDeleteChallengeHandler = (String) -> Void
+typealias OnToggleChallengeCompleted = (String, [Activity]) -> Void
+
 struct ChallengeItemModel: Identifiable{
     
     private let challenge: Challenge
-    private let onDelete: (String) -> Void
-    private let onToggleComplete: (String, [Activity]) -> Void
+    private let onDelete: OnDeleteChallengeHandler?
+    private let onToggleComplete: OnToggleChallengeCompleted?
     
     let todayTitle = "Today"
     
     
     var id: String{
-        challenge.id!
+        challenge.id ?? UUID().uuidString
     }
     
     
     init(_ challenge: Challenge,
-         onDelete: @escaping (String) -> Void,
-         onToggleComplete: @escaping (String, [Activity]) -> Void)
+         onDelete: OnDeleteChallengeHandler?,
+         onToggleComplete: OnToggleChallengeCompleted?
+    )
     {
         
         self.challenge = challenge
@@ -73,7 +77,7 @@ struct ChallengeItemModel: Identifiable{
         guard let id = challenge.id else {return}
         switch action{
         case .delete:
-            onDelete(id)
+            onDelete?(id)
         case .toggleComplete:
             let today = Calendar.current.startOfDay(for: Date())
             let activities = challenge.activities.map { activity -> Activity in
@@ -83,7 +87,7 @@ struct ChallengeItemModel: Identifiable{
                     return activity
                 }
             }
-            onToggleComplete(id, activities)
+            onToggleComplete?(id, activities)
         }
     }
 
