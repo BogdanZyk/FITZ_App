@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TabContainerView: View {
+    @EnvironmentObject var storeVM: StoreViewModel
     @StateObject private var tabVM = TabContainerViewModel()
     @StateObject private var challengeVM = ChallengeListViewModel()
     @State private var showCreateModal: Bool = false
@@ -36,6 +37,7 @@ struct TabContainerView: View {
 struct TabContainerView_Previews: PreviewProvider {
     static var previews: some View {
         TabContainerView()
+            .environmentObject(StoreViewModel())
     }
 }
 
@@ -55,6 +57,7 @@ extension TabContainerView{
         case .settings:
             NavigationView{
                 ProfileView()
+                    .environmentObject(storeVM)
             }
         }
     }

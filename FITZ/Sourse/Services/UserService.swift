@@ -8,6 +8,7 @@
 import Combine
 import FirebaseFirestore
 import FirebaseAuth
+import SwiftUI
 
 protocol UserServiceProtocol{
     
@@ -32,7 +33,7 @@ final class UserService: UserServiceProtocol{
     
     
     
-    var isPremium: Bool = false
+    @AppStorage("isPremium") var isPremium = false
     
   
     

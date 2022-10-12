@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct FITZApp: App {
     @AppStorage("isDarkMode") private var isDarkMode = false
+    @StateObject private var storeViewModel = StoreViewModel()
     @StateObject private var appState = AppState()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
@@ -17,6 +18,7 @@ struct FITZApp: App {
             Group{
                 if appState.isLoggedIn{
                     TabContainerView()
+                        .environmentObject(storeViewModel)
                 }else{
                     LandingView()
                 }

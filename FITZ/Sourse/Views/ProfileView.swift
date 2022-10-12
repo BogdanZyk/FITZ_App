@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var storeVM: StoreViewModel
     @StateObject private var viewModel = ProfileViewModel()
+    @State private var showPurchaseSubsView: Bool = false
     var body: some View {
        ScrollView{
             VStack(spacing: 20){
@@ -27,6 +29,10 @@ struct ProfileView: View {
        }) {
            LoginSignupView(mode: .signup, isPushed: $viewModel.loginSingupPushed)
        }
+       .sheet(isPresented: $showPurchaseSubsView) {
+           PurchaseSheetView()
+               .environmentObject(storeVM)
+       }
     }
 }
 
@@ -35,6 +41,7 @@ struct ProfileView_Previews: PreviewProvider {
         NavigationView {
             ProfileView()
         }
+        .environmentObject(StoreViewModel())
     }
 }
 
@@ -93,7 +100,7 @@ extension ProfileView{
     
     private var upgradePremiumBtn: some View{
         Button {
-            
+            showPurchaseSubsView.toggle()
         } label: {
             Label {
                 Text("Upgrade to premium")
