@@ -48,6 +48,10 @@
 		5A0E292828F714CE006DACB9 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A04683C28D1295B0040C122 /* View.swift */; };
 		5A0E292A28F71707006DACB9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E292928F71707006DACB9 /* Provider.swift */; };
 		5A0E292C28F7189E006DACB9 /* FitzWidgetsEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E292B28F7189E006DACB9 /* FitzWidgetsEntryView.swift */; };
+		5A0E292E28F8003A006DACB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5A0E292D28F8003A006DACB9 /* FirebaseAuth */; };
+		5A0E292F28F80549006DACB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
+		5A0E293428F8095F006DACB9 /* FirebaseAuthGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E293328F8095F006DACB9 /* FirebaseAuthGroup.swift */; };
+		5A0E293528F80996006DACB9 /* FirebaseAuthGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E293328F8095F006DACB9 /* FirebaseAuthGroup.swift */; };
 		5A1EA71A28F237B100BE36C9 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */; };
 		5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28B28D290EF002E21E7 /* FitzError.swift */; };
 		5A6BF28F28D4DAFE002E21E7 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */; };
@@ -135,6 +139,9 @@
 		5A0E292228F70F40006DACB9 /* ChallengeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEntry.swift; sourceTree = "<group>"; };
 		5A0E292928F71707006DACB9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		5A0E292B28F7189E006DACB9 /* FitzWidgetsEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzWidgetsEntryView.swift; sourceTree = "<group>"; };
+		5A0E293128F807F8006DACB9 /* FITZ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FITZ.entitlements; sourceTree = "<group>"; };
+		5A0E293228F8080F006DACB9 /* FitzWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitzWidgetsExtension.entitlements; sourceTree = "<group>"; };
+		5A0E293328F8095F006DACB9 /* FirebaseAuthGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthGroup.swift; sourceTree = "<group>"; };
 		5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		5A6BF28B28D290EF002E21E7 /* FitzError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzError.swift; sourceTree = "<group>"; };
 		5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
@@ -184,6 +191,7 @@
 				5A0E291028F70C48006DACB9 /* SwiftUI.framework in Frameworks */,
 				5A0E290F28F70C48006DACB9 /* WidgetKit.framework in Frameworks */,
 				5A0E292128F70E05006DACB9 /* FirebaseFirestoreSwift in Frameworks */,
+				5A0E292E28F8003A006DACB9 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +201,7 @@
 		5A04681B28D126870040C122 = {
 			isa = PBXGroup;
 			children = (
+				5A0E293228F8080F006DACB9 /* FitzWidgetsExtension.entitlements */,
 				5A04682628D126870040C122 /* FITZ */,
 				5A0E291128F70C48006DACB9 /* FitzWidgets */,
 				5A0E28DD28F70966006DACB9 /* Frameworks */,
@@ -212,6 +221,7 @@
 		5A04682628D126870040C122 /* FITZ */ = {
 			isa = PBXGroup;
 			children = (
+				5A0E293128F807F8006DACB9 /* FITZ.entitlements */,
 				5AD4BC9428F6B72900E1721E /* SubscriptionConfig.storekit */,
 				5A04682728D126870040C122 /* FITZApp.swift */,
 				5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */,
@@ -262,6 +272,7 @@
 				5A6BF28D28D4DAE2002E21E7 /* Publishers */,
 				5A04684528D12BA90040C122 /* Style */,
 				5A04683A28D1294B0040C122 /* Extensions */,
+				5A0E293328F8095F006DACB9 /* FirebaseAuthGroup.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -443,6 +454,7 @@
 			name = FitzWidgetsExtension;
 			packageProductDependencies = (
 				5A0E292028F70E05006DACB9 /* FirebaseFirestoreSwift */,
+				5A0E292D28F8003A006DACB9 /* FirebaseAuth */,
 			);
 			productName = FitzWidgetsExtension;
 			productReference = 5A0E290E28F70C48006DACB9 /* FitzWidgetsExtension.appex */;
@@ -505,6 +517,7 @@
 			files = (
 				5A0E292728F7136F006DACB9 /* Assets.xcassets in Resources */,
 				5A0E291528F70C49006DACB9 /* Assets.xcassets in Resources */,
+				5A0E292F28F80549006DACB9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +546,7 @@
 				5A6BF28F28D4DAFE002E21E7 /* AuthPublisher.swift in Sources */,
 				5A04684428D1295B0040C122 /* UIApplication.swift in Sources */,
 				5A6C7A8528EE0D2F0008E310 /* ProgressCircleModel.swift in Sources */,
+				5A0E293428F8095F006DACB9 /* FirebaseAuthGroup.swift in Sources */,
 				5A6BF2A428D503BE002E21E7 /* ChallengeItemModel.swift in Sources */,
 				5A04685528D1394D0040C122 /* CreateChallengeViewModel.swift in Sources */,
 				5A04684228D1295B0040C122 /* Date.swift in Sources */,
@@ -572,6 +586,7 @@
 				5A0E292828F714CE006DACB9 /* View.swift in Sources */,
 				5A0E292428F710FC006DACB9 /* ChallengeItemModel.swift in Sources */,
 				5A0E292528F712F4006DACB9 /* ProgressCircleView.swift in Sources */,
+				5A0E293528F80996006DACB9 /* FirebaseAuthGroup.swift in Sources */,
 				5A0E292628F71362006DACB9 /* Color.swift in Sources */,
 				5A0E292A28F71707006DACB9 /* Provider.swift in Sources */,
 				5A0E292328F70F40006DACB9 /* ChallengeEntry.swift in Sources */,
@@ -713,6 +728,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FITZ/FITZ.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FITZ/Preview Content\"";
@@ -743,6 +759,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FITZ/FITZ.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FITZ/Preview Content\"";
@@ -773,6 +790,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = FitzWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
@@ -802,6 +820,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = FitzWidgetsExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
@@ -888,6 +907,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5A08652728D2791400B44B00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		5A0E292D28F8003A006DACB9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A08652728D2791400B44B00 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

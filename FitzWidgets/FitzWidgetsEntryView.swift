@@ -44,11 +44,13 @@ extension FitzWidgetsEntryView{
     }
     
     
-    private func progressViewComponent(_ item: ChallengeItemModel) -> some View{
-        VStack(spacing: 0) {
-            Spacer()
+    private func progressViewComponent(_ item: ChallengeItemModel, isTodayLabel: Bool = true) -> some View{
+        VStack(spacing: 25) {
+            if isTodayLabel{
+                Text("Today")
+                    .font(.subheadline.weight(.medium))
+            }
             ProgressCircleView(progressModel: item.progressCircleModel, size: .small)
-            Spacer()
             HStack{
                 Text(item.toadyRepTitle)
                     .lineLimit(1)
@@ -62,10 +64,23 @@ extension FitzWidgetsEntryView{
     }
     
     private var mediumWidgetView: some View{
-        HStack{
-            ForEach(entry.challenge.prefix(3), id: \.id) { item in
-                progressViewComponent(item)
-                    .hCenter()
+        VStack(spacing: 25){
+            HStack {
+                Text("Today")
+                    .font(.subheadline.weight(.medium))
+                Spacer()
+                Group{
+                    Text("Update at")
+                    Text(entry.date, style: .time)
+                }
+                .font(.caption2)
+                
+            }
+            HStack{
+                ForEach(entry.challenge.prefix(3), id: \.id) { item in
+                    progressViewComponent(item, isTodayLabel: false)
+                        .hCenter()
+                }
             }
         }
     }

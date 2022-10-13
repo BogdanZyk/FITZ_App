@@ -7,10 +7,16 @@
 
 import WidgetKit
 import SwiftUI
-
+import Firebase
 
 @main
 struct FitzWidgets: Widget {
+    
+    init(){
+        FirebaseApp.configure()
+        firebaseAuthGroup()
+    }
+    
     let kind: String = "FitzWidgets"
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
