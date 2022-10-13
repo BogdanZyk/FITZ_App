@@ -25,7 +25,9 @@ struct CreateView: View {
         })
         .toolbar{
             ToolbarItem(placement: .navigationBarTrailing) {
-               toolbarBtn
+                if viewModel.isPremium{
+                    toolbarBtn
+                }
             }
         }
         .navigationTitle("Create challenge")

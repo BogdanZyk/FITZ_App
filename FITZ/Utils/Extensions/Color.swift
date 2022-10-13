@@ -17,6 +17,7 @@ extension Color {
     static let createPrimaryBtn = Color("createPrimaryBtn")
     static let primaryFont = Color("primaryFont")
     static let invertPrimaryFont = Color("invertPrimaryFont")
+    static let launchBg = Color("launchBg")
 //    static let accentOrange = Color("accentOrange")
 //    static let backgroung = Color("bg")
 //    static let fontSecondary = Color("fontSecondary")

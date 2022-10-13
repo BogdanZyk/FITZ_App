@@ -38,6 +38,11 @@ final class CreateChallengeViewModel: ObservableObject{
     @Published var error: FitzError?
     @Published var isLoading: Bool = false
     
+    
+    var isPremium: Bool{
+        userServise.isPremium
+    }
+    
     enum Action{
         case createChallenge, setCustomExercise
     }

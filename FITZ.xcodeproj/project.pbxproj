@@ -52,6 +52,9 @@
 		5A0E292F28F80549006DACB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
 		5A0E293428F8095F006DACB9 /* FirebaseAuthGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E293328F8095F006DACB9 /* FirebaseAuthGroup.swift */; };
 		5A0E293528F80996006DACB9 /* FirebaseAuthGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E293328F8095F006DACB9 /* FirebaseAuthGroup.swift */; };
+		5A0E293728F8141E006DACB9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A0E293628F8141E006DACB9 /* Launch Screen.storyboard */; };
+		5A0E293B28F816F5006DACB9 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E293A28F816F5006DACB9 /* StartView.swift */; };
+		5A0E293D28F817A6006DACB9 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0E293C28F817A6006DACB9 /* LaunchScreenView.swift */; };
 		5A1EA71A28F237B100BE36C9 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */; };
 		5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28B28D290EF002E21E7 /* FitzError.swift */; };
 		5A6BF28F28D4DAFE002E21E7 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */; };
@@ -75,7 +78,6 @@
 		5A6BF2B828D69E8C002E21E7 /* TextFieldRoundedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6BF2B728D69E8C002E21E7 /* TextFieldRoundedStyle.swift */; };
 		5A6C7A8328EE0CE70008E310 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8228EE0CE70008E310 /* ProgressCircleView.swift */; };
 		5A6C7A8528EE0D2F0008E310 /* ProgressCircleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8428EE0D2F0008E310 /* ProgressCircleModel.swift */; };
-		5A6C7A8728EE26B90008E310 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C7A8628EE26B80008E310 /* testView.swift */; };
 		5A72871928D2745100DFC01A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72871828D2745100DFC01A /* UserService.swift */; };
 		5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */; };
 		5AD4BC9128F3782A00E1721E /* PurchaseSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD4BC9028F3782A00E1721E /* PurchaseSheetView.swift */; };
@@ -142,6 +144,9 @@
 		5A0E293128F807F8006DACB9 /* FITZ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FITZ.entitlements; sourceTree = "<group>"; };
 		5A0E293228F8080F006DACB9 /* FitzWidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FitzWidgetsExtension.entitlements; sourceTree = "<group>"; };
 		5A0E293328F8095F006DACB9 /* FirebaseAuthGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthGroup.swift; sourceTree = "<group>"; };
+		5A0E293628F8141E006DACB9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5A0E293A28F816F5006DACB9 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		5A0E293C28F817A6006DACB9 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		5A1EA71928F237B100BE36C9 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		5A6BF28B28D290EF002E21E7 /* FitzError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzError.swift; sourceTree = "<group>"; };
 		5A6BF28E28D4DAFE002E21E7 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
@@ -165,7 +170,6 @@
 		5A6BF2B728D69E8C002E21E7 /* TextFieldRoundedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRoundedStyle.swift; sourceTree = "<group>"; };
 		5A6C7A8228EE0CE70008E310 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		5A6C7A8428EE0D2F0008E310 /* ProgressCircleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleModel.swift; sourceTree = "<group>"; };
-		5A6C7A8628EE26B80008E310 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		5A72871828D2745100DFC01A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5AD4BC9028F3782A00E1721E /* PurchaseSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseSheetView.swift; sourceTree = "<group>"; };
@@ -221,15 +225,16 @@
 		5A04682628D126870040C122 /* FITZ */ = {
 			isa = PBXGroup;
 			children = (
+				5A0E293628F8141E006DACB9 /* Launch Screen.storyboard */,
 				5A0E293128F807F8006DACB9 /* FITZ.entitlements */,
 				5AD4BC9428F6B72900E1721E /* SubscriptionConfig.storekit */,
 				5A04682728D126870040C122 /* FITZApp.swift */,
+				5A0E293A28F816F5006DACB9 /* StartView.swift */,
 				5A72871A28D2754B00DFC01A /* GoogleService-Info.plist */,
 				5A04684928D131260040C122 /* Sourse */,
 				5A04684628D12BC80040C122 /* Utils */,
 				5A04682B28D1268A0040C122 /* Assets.xcassets */,
 				5A04682D28D1268A0040C122 /* Preview Content */,
-				5A08652F28D2797900B44B00 /* AppDelegate.swift */,
 			);
 			path = FITZ;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 		5A04684928D131260040C122 /* Sourse */ = {
 			isa = PBXGroup;
 			children = (
+				5A0E293E28F81942006DACB9 /* AppDelegate */,
 				5A72871728D273C900DFC01A /* Services */,
 				5A04685628D139E60040C122 /* Protocols */,
 				5A04684C28D131390040C122 /* Models */,
@@ -292,6 +298,7 @@
 		5A04684A28D1312C0040C122 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A0E293C28F817A6006DACB9 /* LaunchScreenView.swift */,
 				5A04682928D126870040C122 /* LandingView.swift */,
 				5A04684F28D131940040C122 /* ViewComponents */,
 				5A04684D28D131490040C122 /* CreateView.swift */,
@@ -301,7 +308,6 @@
 				5A6BF2A728D68B83002E21E7 /* ProfileView.swift */,
 				5A6BF2AE28D69220002E21E7 /* CreateChallengeModalView.swift */,
 				5A6BF2B328D698E4002E21E7 /* LoginSignupView.swift */,
-				5A6C7A8628EE26B80008E310 /* testView.swift */,
 				5AD4BC9028F3782A00E1721E /* PurchaseSheetView.swift */,
 			);
 			path = Views;
@@ -374,6 +380,14 @@
 				5A0E292B28F7189E006DACB9 /* FitzWidgetsEntryView.swift */,
 			);
 			path = FitzWidgets;
+			sourceTree = "<group>";
+		};
+		5A0E293E28F81942006DACB9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5A08652F28D2797900B44B00 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		5A6BF28D28D4DAE2002E21E7 /* Publishers */ = {
@@ -507,6 +521,7 @@
 			files = (
 				5A04682F28D1268A0040C122 /* Preview Assets.xcassets in Resources */,
 				5A04682C28D1268A0040C122 /* Assets.xcassets in Resources */,
+				5A0E293728F8141E006DACB9 /* Launch Screen.storyboard in Resources */,
 				5A72871B28D2754B00DFC01A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,13 +546,14 @@
 				5A04684128D1295B0040C122 /* View.swift in Sources */,
 				5A08653228D2884800B44B00 /* Challenge.swift in Sources */,
 				5A04685C28D13DBA0040C122 /* ChallengePartModel.swift in Sources */,
+				5A0E293B28F816F5006DACB9 /* StartView.swift in Sources */,
 				5A6BF29D28D4F82C002E21E7 /* QuerySnapshotPublisher.swift in Sources */,
 				5A6BF29728D4E083002E21E7 /* TabItem.swift in Sources */,
 				5A04685A28D13C980040C122 /* DropdownOptionProtocol.swift in Sources */,
 				5A04684E28D131490040C122 /* CreateView.swift in Sources */,
 				5A6BF2AF28D69220002E21E7 /* CreateChallengeModalView.swift in Sources */,
+				5A0E293D28F817A6006DACB9 /* LaunchScreenView.swift in Sources */,
 				5A1EA71A28F237B100BE36C9 /* ErrorHandler.swift in Sources */,
-				5A6C7A8728EE26B90008E310 /* testView.swift in Sources */,
 				5A6BF2A628D50C0D002E21E7 /* ChallengeItemView.swift in Sources */,
 				5A6BF28C28D290EF002E21E7 /* FitzError.swift in Sources */,
 				5A6BF2B628D6992B002E21E7 /* LoginSignupViewModel.swift in Sources */,
@@ -735,11 +751,14 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FITZ;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -766,11 +785,14 @@
 				DEVELOPMENT_TEAM = 92PU6D6MCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FITZ;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

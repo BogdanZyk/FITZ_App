@@ -42,7 +42,7 @@ extension LandingView{
     
     private var welcomeTitle: some View{
         VStack(spacing: 20) {
-            Text("Welcome to FitzApp")
+            Text("Welcome to FITZ")
                 .font(.system(size: 35, weight: .medium))
             Text("Create a sports challenge and complete it!")
                 .font(.system(size: 25, weight: .medium))
